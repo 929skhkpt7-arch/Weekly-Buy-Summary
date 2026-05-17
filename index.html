@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armchair Insider — Weekly Buy Summary · May 4–10, 2026</title>
+<title>Armchair Insider — Weekly Buy Summary · May 11–17, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -107,7 +107,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink)
 .top-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px;}
 .top-ticker{
   font-family:'DM Mono',monospace;font-size:20px;font-weight:500;
-  color:var(--ink);background:var(--ink);color:var(--gold-lt);
+  background:var(--ink);color:var(--gold-lt);
   padding:4px 12px;border-radius:5px;letter-spacing:.04em;
 }
 .featured .top-ticker{background:var(--gold);color:var(--ink);}
@@ -201,6 +201,18 @@ td{padding:11px 13px;vertical-align:middle;}
 .men-num{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;min-width:16px;}
 .men-bar{height:6px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:3px;min-width:4px;}
 
+/* ── YIELD LINK ── */
+.yield-link{
+  display:inline-flex;align-items:center;gap:5px;
+  text-decoration:none;border-radius:4px;padding:2px 4px 2px 0;
+  transition:opacity .15s;
+}
+.yield-link:hover{opacity:.75;}
+.sa-icon{
+  font-size:10px;color:var(--gold-dim);opacity:.7;
+  font-family:'DM Mono',monospace;
+}
+
 /* ── ANALYSIS ── */
 .ana-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;}
 .ana-block{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px;box-shadow:var(--sh);}
@@ -231,7 +243,7 @@ footer span{color:rgba(201,168,76,.65);}
 <section class="hero">
   <div class="hero-eyebrow">Armchair Insider Lounge</div>
   <h1><em>Weekly Buy</em> Summary</h1>
-  <p class="hero-date">May 4 – May 10, 2026 &nbsp;·&nbsp; Community Activity Report</p>
+  <p class="hero-date">May 11 – May 17, 2026 &nbsp;·&nbsp; Community Activity Report</p>
   <p class="hero-desc">A curated snapshot of tickers recently bought or discussed by community members — ranked by mentions, enriched with asset class and yield context, and presented for educational review.</p>
   <span class="hero-disc">⚠ For community discussion and education only. Not financial advice.</span>
 </section>
@@ -245,23 +257,23 @@ footer span{color:rgba(201,168,76,.65);}
   <div class="metrics">
     <div class="m-card">
       <div class="m-label">Tickers Mentioned</div>
-      <div class="m-val gold">44</div>
+      <div class="m-val gold">30</div>
       <div class="m-meta">Unique tickers across all buys</div>
     </div>
     <div class="m-card">
       <div class="m-label">Total Buy Mentions</div>
-      <div class="m-val gold">57</div>
+      <div class="m-val gold">42</div>
       <div class="m-meta">Aggregated across all members this week</div>
     </div>
     <div class="m-card">
       <div class="m-label">Most Mentioned</div>
-      <div class="m-val" style="font-size:22px;">MLPI · IWMI</div>
-      <div class="m-meta">4 mentions each — tied for top</div>
+      <div class="m-val" style="font-size:22px;">MAIN</div>
+      <div class="m-meta">7 mentions — clear community favorite</div>
     </div>
     <div class="m-card">
       <div class="m-label">Highest Yield</div>
-      <div class="m-val green">105.25%</div>
-      <div class="m-meta">MSTY — YieldMax MSTR Option Income ETF</div>
+      <div class="m-val green">58.24%</div>
+      <div class="m-meta">USOY — Defiance Oil Enhanced Options Income ETF</div>
     </div>
     <div class="m-card">
       <div class="m-label">Top Asset Class</div>
@@ -270,8 +282,8 @@ footer span{color:rgba(201,168,76,.65);}
     </div>
     <div class="m-card">
       <div class="m-label">Average Yield</div>
-      <div class="m-val green">14.53%</div>
-      <div class="m-meta">Across all 44 tickers this week</div>
+      <div class="m-val green">17.52%</div>
+      <div class="m-meta">Across all 30 tickers this week</div>
     </div>
   </div>
 </section>
@@ -287,54 +299,54 @@ footer span{color:rgba(201,168,76,.65);}
 
     <div class="top-card featured">
       <div class="top-card-head">
-        <span class="top-ticker">MLPI</span>
-        <span class="mention-badge"><span class="dot"></span>4 mentions</span>
+        <span class="top-ticker">MAIN</span>
+        <span class="mention-badge"><span class="dot"></span>7 mentions</span>
       </div>
-      <div class="top-name">NEOS MLP &amp; Energy Infrastructure High Income ETF</div>
+      <div class="top-name">Main Street Capital Corporation</div>
       <div class="top-meta">
-        <span class="top-pill">Covered Call Energy Infrastructure ETF</span>
-        <span class="top-pill green">14.72% yield</span>
+        <span class="top-pill">BDC</span>
+        <span class="top-pill green">8.56% yield</span>
       </div>
     </div>
 
     <div class="top-card featured">
       <div class="top-card-head">
-        <span class="top-ticker">IWMI</span>
+        <span class="top-ticker">TRIN</span>
         <span class="mention-badge"><span class="dot"></span>4 mentions</span>
       </div>
-      <div class="top-name">NEOS Russell 2000 High Income ETF</div>
+      <div class="top-name">Trinity Capital Inc.</div>
       <div class="top-meta">
-        <span class="top-pill">Covered Call Small-Cap ETF</span>
-        <span class="top-pill green">14.47% yield</span>
+        <span class="top-pill">BDC</span>
+        <span class="top-pill green">12.11% yield</span>
       </div>
     </div>
 
     <div class="top-card">
       <div class="top-card-head">
-        <span class="top-ticker">MAIN</span>
+        <span class="top-ticker">PFFA</span>
         <span class="mention-badge"><span class="dot"></span>3 mentions</span>
       </div>
-      <div class="top-name">Main Street Capital Corporation</div>
+      <div class="top-name">Virtus InfraCap U.S. Preferred Stock ETF</div>
       <div class="top-meta">
-        <span class="top-pill">BDC</span>
-        <span class="top-pill green">8.00% yield</span>
+        <span class="top-pill">Preferred Stock ETF</span>
+        <span class="top-pill green">9.48% yield</span>
       </div>
     </div>
 
     <div class="top-card">
       <div class="top-card-head" style="flex-wrap:wrap;gap:6px;">
         <span class="top-ticker" style="font-size:14px;padding:3px 10px;">2-Mention Cluster</span>
-        <span class="mention-badge"><span class="dot"></span>8 tickers · 2 each</span>
+        <span class="mention-badge"><span class="dot"></span>4 tickers · 2 each</span>
       </div>
-      <div class="top-name" style="margin-bottom:8px;">TYG · PTY · PFFA · PCN · OTF · FSCO · BTCI · ASGI</div>
+      <div class="top-name" style="margin-bottom:8px;">CEFS · MLPI · KSLV · GPIQ</div>
       <div class="top-meta">
-        <span class="top-pill">Energy · Credit · Preferred · BDC · Bitcoin · Infra</span>
+        <span class="top-pill">CEF ETF · MLP · Silver · Nasdaq-100</span>
       </div>
     </div>
 
   </div>
   <div class="top-interpret">
-    <strong>Community Signal:</strong> The dual lead of MLPI and IWMI reflects notable member conviction in NEOS covered call strategies — specifically energy/MLP income and small-cap income overlays. MAIN's 3-mention presence continues its status as a community BDC staple. The 8-ticker cluster at 2 mentions signals diversified interest across credit, preferred securities, infrastructure, and bitcoin-linked income.
+    <strong>Community Signal:</strong> MAIN's dominant 7-mention lead marks a decisive community conviction in this BDC stalwart. TRIN's 4 mentions reinforces BDC enthusiasm as a category. PFFA's 3-mention return highlights continued interest in preferred stock income. The 4-ticker cluster at 2 mentions — CEFS, MLPI, KSLV, and GPIQ — spans covered calls across commodities, infrastructure, and tech, reflecting broad diversification in single-name positioning.
   </div>
 </div>
 </div>
@@ -365,12 +377,6 @@ footer span{color:rgba(201,168,76,.65);}
       <div class="c-wrap" style="max-width:400px;margin:0 auto;"><canvas id="donutChart" height="260"></canvas></div>
     </div>
 
-    <div class="c-card">
-      <div class="c-title">Yield vs. Mentions</div>
-      <div class="c-sub">Bubble size = relative yield · Outliers labeled</div>
-      <div class="c-wrap"><canvas id="scatChart" height="280"></canvas></div>
-    </div>
-
   </div>
 </div>
 </div>
@@ -379,7 +385,7 @@ footer span{color:rgba(201,168,76,.65);}
 <div class="wrap">
 <section class="section">
   <p class="sec-eye">◆ Full List</p>
-  <h2 class="sec-title">All 44 Tickers This Week</h2>
+  <h2 class="sec-title">All 30 Tickers This Week</h2>
   <div class="rule"></div>
   <div class="tbl-ctrl">
     <input type="text" class="s-box" id="sBox" placeholder="Search ticker or name…" oninput="filterTbl()">
@@ -389,7 +395,7 @@ footer span{color:rgba(201,168,76,.65);}
     <button class="f-btn"        data-f="ETF"   onclick="setF('ETF')">ETF</button>
     <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
     <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
-    <span class="r-count" id="rCount">44 tickers</span>
+    <span class="r-count" id="rCount">30 tickers</span>
   </div>
   <div class="tbl-wrap">
     <table id="mainTbl">
@@ -419,18 +425,18 @@ footer span{color:rgba(201,168,76,.65);}
 
     <div class="ana-block">
       <h3><span class="ana-icon">📊</span> Most-Mentioned Tickers</h3>
-      <p>MLPI and IWMI both drew 4 mentions, making them the week's standout tickers. Both are NEOS covered call ETFs — one targeting MLP/energy infrastructure, the other small-cap equities. MAIN rounds out the top three, a familiar BDC favorite for its internally managed structure and monthly dividend consistency.</p>
+      <p>MAIN leads this week decisively with 7 mentions — the highest single-ticker count seen recently — cementing its role as the community's premier BDC holding. TRIN follows with 4 mentions, and PFFA rounds out the top three at 3, signaling continued interest in both direct lending and preferred stock income strategies.</p>
     </div>
 
     <div class="ana-block">
       <h3><span class="ana-icon">🏗️</span> Dominant Asset Classes</h3>
-      <p>Covered call ETFs dominate this week's buying activity — including NEOS, Kurv, YieldMax, KraneShares, Goldman Sachs, and TappAlpha products. BDCs appear prominently with MAIN, OTF, OBDC, TRIN, MSLD, FSK, and NCDL. Infrastructure CEFs (ASGI, UTF, TYG, EMO) and multi-sector bond CEFs (PTY, PCN, PDI) also see solid representation.</p>
+      <p>BDCs stand out this week with MAIN, TRIN, HTGC, CSWC, ARCC, and FSCO — a strong showing across internally and externally managed structures. Covered call ETFs remain well represented via MLPI, KSLV, GPIQ, USOY, NVII, SPYI, GPIX, CHPY, BTCI, NIHI, and KLIP. Infrastructure, preferred securities, and multi-sector credit CEFs round out the week's activity.</p>
     </div>
 
     <div class="ana-block">
       <h3><span class="ana-icon">⚡</span> High-Yield Tickers</h3>
-      <p>MSTY leads at 105.25%, followed by USOY at 50%, KSLV at 27.54%, KLIP at 23.43%, BTCI at 26.36%, and KGLD at 17.49%. These are primarily single-stock covered call strategies or commodity-linked option income products tied to volatile underlying assets. Distribution sustainability for these is structurally different from traditional income funds.</p>
-      <div class="callout"><strong>Note:</strong> Triple-digit and 50%+ yields often reflect option premium capture or return of capital, not recurring organic income. These require individual evaluation beyond the headline number.</div>
+      <p>USOY leads at 58.24%, followed by CHPY at 45.17%, NVII at 43.05%, GIAX at 22.41%, and KSLV at 27.54%. These are primarily single-stock, commodity, or sector-specific covered call strategies tied to volatile underlying assets. Distribution sustainability for these requires individual evaluation beyond the headline number.</p>
+      <div class="callout"><strong>Note:</strong> Yields exceeding 40–50% often reflect option premium capture or return of capital, not recurring organic income. These require individual evaluation beyond the headline number.</div>
     </div>
 
     <div class="ana-block">
@@ -440,12 +446,12 @@ footer span{color:rgba(201,168,76,.65);}
 
     <div class="ana-block">
       <h3><span class="ana-icon">🌐</span> Diversification Observations</h3>
-      <p>This week's buys span a healthy range: energy infrastructure, global equity, real estate, healthcare, preferred securities, Asia-Pacific bonds, utility income, and direct lending. The international exposure via NIHI (MSCI EAFE), IDVO, FAX, and HUTL.TO adds geographic diversification. Several members appear to be building multi-sleeve income portfolios rather than concentrating in one category.</p>
+      <p>This week's buys span a healthy range of income strategies: direct BDC lending (MAIN, TRIN, ARCC, HTGC, CSWC), preferred securities (PFFA, PTA), energy infrastructure (TYG, MLPI), REIT exposure (STWD), Asia-Pacific and international equity (OVF, NIHI), bond CEFs (PDO), and multiple covered call overlays across gold, silver, oil, and tech. Geographic and structural diversification is evident across the membership.</p>
     </div>
 
     <div class="ana-block">
       <h3><span class="ana-icon">💡</span> Notable Single Mentions</h3>
-      <p>HUTL.TO and BEPR.TO are Canadian-listed ETFs noted as "tickers may vary." OVL (Overlay Shares) is a lower-yield equity ETF at 5.39% — likely held for growth exposure alongside income. NCDL (Nuveen Churchill Direct Lending) represents the private credit/direct lending space, a less commonly seen category in weekly summaries.</p>
+      <p>TLTW (iShares 20+ Year Treasury Bond BuyWrite) offers a less common treasury-focused covered call approach at 12.82%. GIAX (Nicholas Global Equity and Income ETF) at 22.41% is a less commonly seen global equity income product. STWD represents mortgage REIT exposure at 11.27%, adding a real-estate credit sleeve. CHPY (YieldMax Semiconductor) at 45.17% brings high-octane single-sector option income to the mix.</p>
     </div>
 
   </div>
@@ -454,57 +460,43 @@ footer span{color:rgba(201,168,76,.65);}
 
 <!-- FOOTER -->
 <footer>
-  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; May 4 – May 10, 2026</div>
+  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; May 11 – May 17, 2026</div>
   <div>Tickers shown are compatible with Seeking Alpha. Tickers for other websites and brokerages may vary.</div>
   <div>For discussion and educational purposes only. Not investment advice.</div>
 </footer>
 
 <script>
 const DATA = [
-  {rank:1, ticker:"MLPI", name:"NEOS MLP & Energy Infrastructure High Income ETF",  mentions:4, ac:"Covered Call Energy Infrastructure ETF",     yield:14.72},
-  {rank:2, ticker:"IWMI", name:"NEOS Russell 2000 High Income ETF",                  mentions:4, ac:"Covered Call Small-Cap ETF",                    yield:14.47},
-  {rank:3, ticker:"MAIN", name:"Main Street Capital Corporation",                    mentions:3, ac:"BDC",                                            yield:8.00},
-  {rank:4, ticker:"TYG",  name:"Tortoise Energy Infrastructure Corp.",               mentions:2, ac:"Energy Infrastructure CEF",                      yield:12.30},
-  {rank:5, ticker:"PTY",  name:"PIMCO Corporate & Income Opportunity Fund",          mentions:2, ac:"Multi-Sector Bond CEF",                          yield:11.59},
-  {rank:6, ticker:"PFFA", name:"Virtus InfraCap U.S. Preferred Stock ETF",           mentions:2, ac:"Preferred Stock ETF",                            yield:9.39},
-  {rank:7, ticker:"PCN",  name:"PIMCO Corporate & Income Strategy Fund",             mentions:2, ac:"Multi-Sector Bond CEF",                          yield:11.18},
-  {rank:8, ticker:"OTF",  name:"Blue Owl Technology Finance Corp.",                  mentions:2, ac:"BDC",                                            yield:12.82},
-  {rank:9, ticker:"FSCO", name:"FS Credit Opportunities Corp.",                      mentions:2, ac:"Credit / Debt CEF",                              yield:13.58},
-  {rank:10,ticker:"BTCI", name:"NEOS Bitcoin High Income ETF",                       mentions:2, ac:"Covered Call Bitcoin ETF",                       yield:26.36},
-  {rank:11,ticker:"ASGI", name:"abrdn Global Infrastructure Income Fund",            mentions:2, ac:"Infrastructure CEF",                             yield:11.44},
-  {rank:12,ticker:"XFLT", name:"XAI Octagon Floating Rate & Alternative Income Trust",mentions:1,ac:"CLO / Floating Rate Credit CEF",                yield:14.06},
-  {rank:13,ticker:"UTF",  name:"Cohen & Steers Infrastructure Fund Inc",             mentions:1, ac:"Infrastructure CEF",                             yield:7.34},
-  {rank:14,ticker:"USOY", name:"Defiance Oil Enhanced Options Income ETF",           mentions:1, ac:"Covered Call Commodity ETF",                     yield:50.00},
-  {rank:15,ticker:"TRIN", name:"Trinity Capital Inc.",                               mentions:1, ac:"BDC",                                            yield:12.01},
-  {rank:16,ticker:"THQ",  name:"abrdn Healthcare Opportunities Fund",                mentions:1, ac:"Healthcare Equity CEF",                          yield:11.73},
-  {rank:17,ticker:"RQI",  name:"Cohen & Steers Quality Income Realty Fund Inc",      mentions:1, ac:"Real Estate CEF",                                yield:8.04},
-  {rank:18,ticker:"PTA",  name:"Cohen & Steers Tax-Advantaged Preferred Securities and Income Fund",mentions:1,ac:"Preferred Securities CEF",        yield:8.10},
-  {rank:19,ticker:"PDI",  name:"PIMCO Dynamic Income Fund",                          mentions:1, ac:"Multi-Sector Bond CEF",                          yield:14.94},
-  {rank:20,ticker:"OVL",  name:"Overlay Shares Large Cap Equity ETF",                mentions:1, ac:"Large-Cap Equity ETF",                           yield:5.39},
-  {rank:21,ticker:"OBDC", name:"Blue Owl Capital Corporation",                       mentions:1, ac:"BDC",                                            yield:11.10},
-  {rank:22,ticker:"NIHI", name:"NEOS MSCI EAFE High Income ETF",                     mentions:1, ac:"Covered Call International Equity ETF",          yield:10.17},
-  {rank:23,ticker:"NCDL", name:"Nuveen Churchill Direct Lending Corp.",              mentions:1, ac:"Private Credit / Direct Lending",                yield:10.10},
-  {rank:24,ticker:"MSTY", name:"YieldMax MSTR Option Income Strategy ETF",           mentions:1, ac:"Single-Stock Covered Call ETF",                  yield:105.25},
-  {rank:25,ticker:"MSLD", name:"Morgan Stanley Direct Lending Fund",                 mentions:1, ac:"BDC",                                            yield:8.90},
-  {rank:26,ticker:"MSFY", name:"Kurv Yield Premium Strategy Microsoft ETF",          mentions:1, ac:"Single-Stock Covered Call ETF",                  yield:13.19},
-  {rank:27,ticker:"KSLV", name:"Kurv Silver Enhanced Income ETF",                    mentions:1, ac:"Covered Call Commodity ETF",                     yield:27.54},
-  {rank:28,ticker:"KLIP", name:"KraneShares KWEB Covered Call Strategy ETF",         mentions:1, ac:"Covered Call China Tech ETF",                    yield:23.43},
-  {rank:29,ticker:"KGLD", name:"Kurv Gold Enhanced Income ETF",                      mentions:1, ac:"Covered Call Commodity ETF",                     yield:17.49},
-  {rank:30,ticker:"JRI",  name:"Nuveen Real Asset Income and Growth Fund",           mentions:1, ac:"Real Asset CEF",                                 yield:12.18},
-  {rank:31,ticker:"JEPI", name:"JPMorgan Equity Premium Income ETF",                 mentions:1, ac:"Covered Call Equity ETF",                        yield:8.46},
-  {rank:32,ticker:"IDVO", name:"Amplify CWP International Enhanced Dividend Income ETF",mentions:1,ac:"International Dividend ETF",                  yield:5.95},
-  {rank:33,ticker:"IAUI", name:"NEOS Gold High Income ETF",                          mentions:1, ac:"Covered Call Gold ETF",                          yield:12.27},
-  {rank:34,ticker:"HUTL.TO",name:"Harvest Utilities Leaders Income ETF CAD Hedged",  mentions:1, ac:"Utilities Covered Call ETF",                     yield:7.61},
-  {rank:35,ticker:"HTD",  name:"John Hancock Tax-Advantaged Dividend Income Fund",   mentions:1, ac:"Utility & Dividend Equity CEF",                  yield:7.40},
-  {rank:36,ticker:"GPIQ", name:"Goldman Sachs Nasdaq-100 Premium Income ETF",        mentions:1, ac:"Covered Call Nasdaq-100 ETF",                    yield:9.65},
-  {rank:37,ticker:"GAB",  name:"Gabelli Equity Trust Inc",                           mentions:1, ac:"Equity CEF",                                     yield:10.58},
-  {rank:38,ticker:"FSK",  name:"FS KKR Capital Corp.",                               mentions:1, ac:"BDC",                                            yield:18.54},
-  {rank:39,ticker:"FAX",  name:"abrdn Asia-Pacific Income Fund Inc.",                mentions:1, ac:"Asia-Pacific Bond CEF",                          yield:13.28},
-  {rank:40,ticker:"EMO",  name:"ClearBridge Energy Midstream Opportunity Fund Inc.", mentions:1, ac:"Energy Infrastructure CEF",                      yield:8.74},
-  {rank:41,ticker:"CEFS", name:"Saba Closed-End Funds ETF",                          mentions:1, ac:"CEF ETF",                                        yield:7.25},
-  {rank:42,ticker:"BIZD", name:"VanEck BDC Income ETF",                              mentions:1, ac:"BDC ETF",                                        yield:13.36},
-  {rank:43,ticker:"BEPR.TO",name:"Brompton Flaherty & Crumrine Enhanced Inv Grd Prf ETF",mentions:1,ac:"Preferred Share ETF",                        yield:8.26},
-  {rank:44,ticker:"AOD",  name:"abrdn Total Dynamic Dividend Fund",                  mentions:1, ac:"Global Equity CEF",                              yield:11.41},
+  {rank:1,  ticker:"MAIN",    name:"Main Street Capital Corporation",                                    mentions:7, ac:"BDC",                                              yield:8.56},
+  {rank:2,  ticker:"TRIN",    name:"Trinity Capital Inc.",                                               mentions:4, ac:"BDC",                                              yield:12.11},
+  {rank:3,  ticker:"PFFA",    name:"Virtus InfraCap U.S. Preferred Stock ETF",                           mentions:3, ac:"Preferred Stock ETF",                              yield:9.48},
+  {rank:4,  ticker:"CEFS",    name:"Saba Closed-End Funds ETF",                                          mentions:2, ac:"CEF ETF",                                           yield:7.23},
+  {rank:5,  ticker:"MLPI",    name:"NEOS MLP & Energy Infrastructure High Income ETF",                   mentions:2, ac:"MLP / Energy Infrastructure Covered Call ETF",      yield:14.72},
+  {rank:6,  ticker:"KSLV",    name:"Kurv Silver Enhanced Income ETF",                                    mentions:2, ac:"Commodity Covered Call ETF",                        yield:27.54},
+  {rank:7,  ticker:"GPIQ",    name:"Goldman Sachs Nasdaq-100 Premium Income ETF",                        mentions:2, ac:"Nasdaq-100 Covered Call ETF",                       yield:9.43},
+  {rank:8,  ticker:"USOY",    name:"Defiance Oil Enhanced Options Income ETF",                           mentions:1, ac:"Commodity Covered Call ETF",                        yield:58.24},
+  {rank:9,  ticker:"TYG",     name:"Tortoise Energy Infrastructure Corp.",                               mentions:1, ac:"Energy Infrastructure CEF",                         yield:12.16},
+  {rank:10, ticker:"TLTW",    name:"iShares 20+ Year Treasury Bond BuyWrite Strategy ETF",               mentions:1, ac:"Treasury Bond Covered Call ETF",                    yield:12.82},
+  {rank:11, ticker:"STWD",    name:"Starwood Property Trust, Inc.",                                      mentions:1, ac:"Mortgage REIT",                                     yield:11.27},
+  {rank:12, ticker:"SPYI",    name:"NEOS S&P 500 High Income ETF",                                       mentions:1, ac:"S&P 500 Covered Call ETF",                          yield:12.09},
+  {rank:13, ticker:"PTA",     name:"Cohen & Steers Tax-Advantaged Preferred Securities and Income Fund", mentions:1, ac:"Preferred Securities CEF",                          yield:8.37},
+  {rank:14, ticker:"PDO",     name:"PIMCO Dynamic Income Opportunities Fund",                            mentions:1, ac:"Bond CEF",                                          yield:12.13},
+  {rank:15, ticker:"OVF",     name:"Overlay Shares Foreign Equity ETF",                                  mentions:1, ac:"International Equity ETF",                          yield:8.97},
+  {rank:16, ticker:"NVII",    name:"REX NVDA Growth & Income ETF",                                       mentions:1, ac:"Single Stock Covered Call ETF",                     yield:43.05},
+  {rank:17, ticker:"NIHI",    name:"NEOS MSCI EAFE High Income ETF",                                     mentions:1, ac:"International Covered Call ETF",                    yield:10.17},
+  {rank:18, ticker:"KGLD",    name:"Kurv Gold Enhanced Income ETF",                                      mentions:1, ac:"Gold Covered Call ETF",                             yield:17.49},
+  {rank:19, ticker:"JRI",     name:"Nuveen Real Asset Income and Growth Fund",                           mentions:1, ac:"Real Asset CEF",                                    yield:12.87},
+  {rank:20, ticker:"IWMI",    name:"NEOS Russell 2000 High Income ETF",                                  mentions:1, ac:"Russell 2000 Covered Call ETF",                     yield:14.47},
+  {rank:21, ticker:"HTGC",    name:"Hercules Capital, Inc.",                                             mentions:1, ac:"BDC",                                               yield:12.11},
+  {rank:22, ticker:"HTD",     name:"John Hancock Tax-Advantaged Dividend Income Fund",                   mentions:1, ac:"Utility / Dividend CEF",                            yield:7.55},
+  {rank:23, ticker:"GPIX",    name:"Goldman Sachs S&P 500 Premium Income ETF",                          mentions:1, ac:"S&P 500 Covered Call ETF",                          yield:7.97},
+  {rank:24, ticker:"GIAX",    name:"Nicholas Global Equity and Income ETF",                              mentions:1, ac:"Global Equity Income ETF",                          yield:22.41},
+  {rank:25, ticker:"GAB",     name:"The Gabelli Equity Trust Inc.",                                      mentions:1, ac:"Equity CEF",                                        yield:10.85},
+  {rank:26, ticker:"FSCO",    name:"FS Credit Opportunities Corp.",                                      mentions:1, ac:"Credit / Private Credit CEF",                       yield:13.80},
+  {rank:27, ticker:"CSWC",    name:"Capital Southwest Corporation",                                      mentions:1, ac:"BDC",                                               yield:10.86},
+  {rank:28, ticker:"CHPY",    name:"YieldMax Semiconductor Portfolio Option Income ETF",                 mentions:1, ac:"Semiconductor Covered Call ETF",                    yield:45.17},
+  {rank:29, ticker:"BTCI",    name:"NEOS Bitcoin High Income ETF",                                       mentions:1, ac:"Bitcoin Covered Call ETF",                          yield:26.36},
+  {rank:30, ticker:"ARCC",    name:"Ares Capital Corporation",                                           mentions:1, ac:"BDC",                                               yield:10.16},
 ];
 
 // ─── TABLE ───
@@ -531,7 +523,7 @@ function renderTbl(rows){
         </div>
       </td>
       <td><span class="type-pill">${d.ac}</span></td>
-      <td><span class="yield-v ${yC(d.yield)}">${d.yield.toFixed(2)}%</span>${yTag(d.yield)}</td>
+      <td><a href="https://seekingalpha.com/symbol/${d.ticker}" target="_blank" rel="noopener" class="yield-link"><span class="yield-v ${yC(d.yield)}">${d.yield.toFixed(2)}%</span>${yTag(d.yield)}<span class="sa-icon">↗</span></a></td>
     </tr>`).join('');
   document.getElementById('rCount').textContent=`${rows.length} ticker${rows.length!==1?'s':''}`;
 }
@@ -571,7 +563,7 @@ const GOLD='#C9A84C', GOLD2='#E8C97A', GREEN='#1F6B47', AMBER='#9E5A0A', RED='#8
 Chart.defaults.font.family="'DM Sans',sans-serif";
 Chart.defaults.color='#7A6F5E';
 
-// 1. Mentions bar (all with ≥1, top sorted)
+// 1. Mentions bar — top 14 sorted
 const topM=[...DATA].sort((a,b)=>b.mentions-a.mentions).slice(0,14);
 new Chart(document.getElementById('mentChart'),{
   type:'bar',
@@ -579,7 +571,7 @@ new Chart(document.getElementById('mentChart'),{
     labels:topM.map(d=>d.ticker),
     datasets:[{
       data:topM.map(d=>d.mentions),
-      backgroundColor:topM.map(d=>d.mentions>=4?GOLD:d.mentions>=2?GOLD2:'#DDD3B8'),
+      backgroundColor:topM.map(d=>d.mentions>=7?GOLD:d.mentions>=2?GOLD2:'#DDD3B8'),
       borderRadius:5,borderSkipped:false,
     }]
   },
@@ -618,13 +610,13 @@ new Chart(document.getElementById('yieldChart'),{
 // 3. Donut — broad categories
 function broadCat(ac){
   const a=ac.toLowerCase();
-  if(a.includes('bdc')||a.includes('direct lend')||a.includes('private credit')) return 'BDC / Direct Lending';
-  if(a.includes('covered call')) return 'Covered Call ETF';
-  if(a.includes('cef')&&(a.includes('infra')||a.includes('energy')||a.includes('utility')||a.includes('utilities'))) return 'Infra / Energy CEF';
-  if(a.includes('cef')&&(a.includes('bond')||a.includes('credit')||a.includes('clo')||a.includes('loan')||a.includes('debt'))) return 'Credit / Bond CEF';
+  if(a.includes('bdc')) return 'BDC / Direct Lending';
+  if(a.includes('covered call')||a.includes('buywrite')||a.includes('option income')) return 'Covered Call ETF';
+  if(a.includes('cef')&&(a.includes('infra')||a.includes('energy')||a.includes('utility'))) return 'Infra / Energy CEF';
+  if(a.includes('cef')&&(a.includes('bond')||a.includes('credit')||a.includes('debt'))) return 'Credit / Bond CEF';
   if(a.includes('cef')) return 'Other CEF';
   if(a.includes('preferred')) return 'Preferred / Income';
-  if(a.includes('real estate')) return 'Real Estate';
+  if(a.includes('reit')) return 'Real Estate';
   if(a.includes('dividend')||a.includes('equity etf')||a.includes('equity cef')||a.includes('global equity')) return 'Dividend / Equity';
   return 'Other';
 }
@@ -652,42 +644,6 @@ new Chart(document.getElementById('donutChart'),{
   }
 });
 
-// 4. Scatter yield vs mentions (exclude MSTY for scale; note it)
-const scatD=DATA.map(d=>({
-  x:d.mentions+(Math.random()*.12-.06),
-  y:d.yield>60?60:d.yield,
-  label:d.ticker,
-  actualY:d.yield,
-  mentions:d.mentions,
-  r:Math.max(5,d.mentions*3.5),
-  ex:d.yield>=50,
-  hi:d.yield>=20,
-}));
-new Chart(document.getElementById('scatChart'),{
-  type:'bubble',
-  data:{datasets:[{
-    label:'Tickers',
-    data:scatD,
-    backgroundColor:scatD.map(d=>d.ex?'rgba(139,26,26,.55)':d.hi?'rgba(158,90,10,.55)':'rgba(31,107,71,.48)'),
-    borderColor:scatD.map(d=>d.ex?RED:d.hi?AMBER:GREEN),
-    borderWidth:1.5,
-  }]},
-  options:{
-    responsive:true,maintainAspectRatio:false,
-    plugins:{
-      legend:{display:false},
-      tooltip:{callbacks:{label:c=>{
-        const d=c.raw;
-        const yDisplay=d.ex?`${d.actualY.toFixed(2)}% ⚠`:`${d.actualY.toFixed(2)}%`;
-        return[`${d.label}`,`Yield: ${yDisplay}`,`Mentions: ${d.mentions}`];
-      }}}
-    },
-    scales:{
-      x:{title:{display:true,text:'Mentions',font:{size:12}},min:0,max:5.5,grid:{color:'#EDE4D0'},border:{display:false},ticks:{stepSize:1}},
-      y:{title:{display:true,text:'Yield (%, capped at 60%)',font:{size:12}},beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{callback:v=>v+'%'}}
-    }
-  }
-});
 </script>
 </body>
 </html>
