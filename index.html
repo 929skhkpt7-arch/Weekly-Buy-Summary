@@ -377,6 +377,12 @@ footer span{color:rgba(201,168,76,.65);}
       <div class="c-wrap" style="max-width:400px;margin:0 auto;"><canvas id="donutChart" height="260"></canvas></div>
     </div>
 
+    <div class="c-card">
+      <div class="c-title">Yield vs. Mentions</div>
+      <div class="c-sub">Bubble size = relative mentions · color-coded by yield level</div>
+      <div class="c-wrap"><canvas id="scatChart" height="280"></canvas></div>
+    </div>
+
   </div>
 </div>
 </div>
@@ -641,6 +647,43 @@ new Chart(document.getElementById('donutChart'),{
       tooltip:{callbacks:{label:c=>`${c.label}: ${c.raw} tickers`}}
     },
     cutout:'55%'
+  }
+});
+
+// 4. Bubble scatter yield vs mentions
+const scatD=DATA.map(d=>({
+  x:d.mentions+(Math.random()*.12-.06),
+  y:d.yield>65?65:d.yield,
+  label:d.ticker,
+  actualY:d.yield,
+  mentions:d.mentions,
+  r:Math.max(5,d.mentions*3.5),
+  ex:d.yield>=50,
+  hi:d.yield>=20,
+}));
+new Chart(document.getElementById('scatChart'),{
+  type:'bubble',
+  data:{datasets:[{
+    label:'Tickers',
+    data:scatD,
+    backgroundColor:scatD.map(d=>d.ex?'rgba(139,26,26,.55)':d.hi?'rgba(158,90,10,.55)':'rgba(31,107,71,.48)'),
+    borderColor:scatD.map(d=>d.ex?RED:d.hi?AMBER:GREEN),
+    borderWidth:1.5,
+  }]},
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>{
+        const d=c.raw;
+        const yDisplay=d.ex?`${d.actualY.toFixed(2)}% ⚠`:`${d.actualY.toFixed(2)}%`;
+        return[`${d.label}`,`Yield: ${yDisplay}`,`Mentions: ${d.mentions}`];
+      }}}
+    },
+    scales:{
+      x:{title:{display:true,text:'Mentions',font:{size:12}},min:0,max:8.5,grid:{color:'#EDE4D0'},border:{display:false},ticks:{stepSize:1}},
+      y:{title:{display:true,text:'Yield (%, capped at 65%)',font:{size:12}},beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{callback:v=>v+'%'}}
+    }
   }
 });
 
