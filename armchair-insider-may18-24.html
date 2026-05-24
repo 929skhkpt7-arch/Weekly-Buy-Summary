@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armchair Insider — Weekly Buy Summary · May 18–24, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --gold:       #C9A84C;
+  --gold-lt:    #E8C97A;
+  --gold-pale:  #FBF5E6;
+  --gold-dim:   #A07830;
+  --ink:        #18150F;
+  --ink-mid:    #3D3628;
+  --ink-lt:     #7A6F5E;
+  --surface:    #FDFCF8;
+  --surface-2:  #F5F0E6;
+  --surface-3:  #EDE4D0;
+  --border:     #E2D8C2;
+  --green:      #1F6B47;
+  --green-lt:   #E6F4ED;
+  --amber:      #9E5A0A;
+  --amber-lt:   #FEF0DC;
+  --red:        #8B1A1A;
+  --red-lt:     #FDECEC;
+  --blue:       #1A3F6F;
+  --r:          12px;
+  --rs:         7px;
+  --sh:         0 2px 14px rgba(24,21,15,.07);
+  --sh-md:      0 6px 28px rgba(24,21,15,.11);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink);line-height:1.65;font-size:15px;}
+
+/* ── HERO ── */
+.hero{
+  background:var(--ink);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 65% 130%, rgba(201,168,76,.20) 0%,transparent 65%),
+    radial-gradient(ellipse 45% 45% at 5% 5%,   rgba(201,168,76,.08) 0%,transparent 55%);
+  padding:60px 24px 52px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(90deg,transparent,transparent 56px,rgba(201,168,76,.025) 56px,rgba(201,168,76,.025) 57px),
+    repeating-linear-gradient(0deg,  transparent,transparent 56px,rgba(201,168,76,.025) 56px,rgba(201,168,76,.025) 57px);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.13);border:1px solid rgba(201,168,76,.32);
+  color:var(--gold-lt);font-family:'DM Mono',monospace;font-size:11px;
+  letter-spacing:.13em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:26px;
+}
+.hero-eyebrow::before{content:'▲';font-size:8px;}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(28px,5.5vw,54px);
+  color:#fff;line-height:1.12;letter-spacing:-.01em;margin-bottom:10px;
+}
+.hero h1 em{font-style:italic;color:var(--gold-lt);}
+.hero-date{
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:18px;
+}
+.hero-desc{max-width:540px;margin:0 auto 22px;color:rgba(255,255,255,.65);font-size:15px;line-height:1.78;}
+.hero-disc{
+  display:inline-block;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.11);color:rgba(255,255,255,.4);
+  font-size:11.5px;padding:8px 18px;border-radius:6px;font-family:'DM Mono',monospace;
+}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+.section{padding:48px 0;}
+.sec-eye{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:26px;letter-spacing:-.01em;margin-bottom:6px;}
+.sec-sub{color:var(--ink-lt);font-size:13.5px;margin-bottom:26px;}
+.rule{height:2px;width:80px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:26px;border-radius:2px;}
+
+/* ── METRIC CARDS ── */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:13px;}
+.m-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--r);
+  padding:22px 18px;box-shadow:var(--sh);position:relative;overflow:hidden;
+  transition:box-shadow .18s,transform .18s;
+}
+.m-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px);}
+.m-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));}
+.m-label{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-lt);margin-bottom:10px;}
+.m-val{font-family:'Playfair Display',serif;font-size:30px;color:var(--ink);line-height:1.1;margin-bottom:4px;}
+.m-val.gold{color:var(--gold-dim);}
+.m-val.green{color:var(--green);}
+.m-meta{font-size:12px;color:var(--ink-lt);line-height:1.5;}
+
+/* ── TOP ACTIVITY ── */
+.top-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.top-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--r);
+  padding:22px 20px;box-shadow:var(--sh);
+}
+.top-card.featured{border-color:var(--gold);background:var(--gold-pale);}
+.top-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px;}
+.top-ticker{
+  font-family:'DM Mono',monospace;font-size:20px;font-weight:500;
+  background:var(--ink);color:var(--gold-lt);
+  padding:4px 12px;border-radius:5px;letter-spacing:.04em;
+}
+.featured .top-ticker{background:var(--gold);color:var(--ink);}
+.mention-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--gold-pale);border:1px solid var(--gold);
+  color:var(--gold-dim);font-family:'DM Mono',monospace;font-size:11px;
+  padding:4px 10px;border-radius:100px;white-space:nowrap;
+}
+.mention-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.top-name{font-size:13.5px;font-weight:500;color:var(--ink-mid);margin-bottom:6px;}
+.top-meta{display:flex;gap:10px;flex-wrap:wrap;}
+.top-pill{
+  font-size:11px;font-family:'DM Mono',monospace;
+  background:var(--surface-2);border:1px solid var(--border);
+  padding:3px 9px;border-radius:100px;color:var(--ink-mid);
+}
+.top-pill.green{background:var(--green-lt);border-color:#A3D4BC;color:var(--green);}
+.top-interpret{
+  background:var(--surface-2);border-left:3px solid var(--gold);
+  padding:16px 18px;border-radius:0 var(--rs) var(--rs) 0;
+  margin-top:22px;font-size:13.5px;color:var(--ink-mid);line-height:1.75;
+}
+
+/* ── CHARTS ── */
+.chart-bg{background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:18px;}
+@media(max-width:580px){.charts-grid{grid-template-columns:1fr;}}
+.c-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px;box-shadow:var(--sh);}
+.c-title{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:3px;}
+.c-sub{font-size:11.5px;color:var(--ink-lt);font-family:'DM Mono',monospace;margin-bottom:18px;}
+.c-wrap{position:relative;}
+
+/* ── TABLE ── */
+.tbl-ctrl{display:flex;gap:10px;margin-bottom:13px;flex-wrap:wrap;align-items:center;}
+.s-box{
+  flex:1;min-width:170px;padding:9px 13px;
+  border:1px solid var(--border);border-radius:var(--rs);
+  font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);outline:none;
+  transition:border-color .18s;
+}
+.s-box:focus{border-color:var(--gold);}
+.f-btn{
+  padding:9px 13px;border:1px solid var(--border);border-radius:var(--rs);
+  background:#fff;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.07em;
+  cursor:pointer;color:var(--ink-mid);transition:all .15s;text-transform:uppercase;
+}
+.f-btn:hover,.f-btn.active{background:var(--ink);color:var(--gold-lt);border-color:var(--ink);}
+.r-count{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-lt);margin-left:auto;}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--sh);}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;}
+thead tr{background:var(--ink);}
+thead th{
+  padding:13px 13px;text-align:left;color:rgba(255,255,255,.7);
+  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none;transition:color .15s;
+}
+thead th:hover{color:var(--gold-lt);}
+thead th.sa::after{content:' ↑';color:var(--gold-lt);}
+thead th.sd::after{content:' ↓';color:var(--gold-lt);}
+tbody tr{border-bottom:1px solid var(--border);transition:background .1s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:var(--gold-pale);}
+tbody tr.hi{background:var(--gold-pale);}
+tbody tr.hi:hover{background:#F0E4C6;}
+td{padding:11px 13px;vertical-align:middle;}
+.rank-c{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-lt);width:32px;}
+.hi .rank-c{color:var(--gold-dim);font-weight:700;}
+.t-badge{
+  display:inline-block;background:var(--ink);color:var(--gold-lt);
+  font-family:'DM Mono',monospace;font-size:12px;padding:3px 8px;border-radius:4px;letter-spacing:.04em;
+}
+.hi .t-badge{background:var(--gold);color:var(--ink);}
+.name-c{color:var(--ink-mid);max-width:210px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.yield-v{font-family:'DM Mono',monospace;font-weight:600;color:var(--green);font-size:13px;}
+.yield-hi{color:var(--amber);}
+.yield-ex{color:var(--red);}
+.tag{
+  display:inline-block;font-size:10px;font-family:'DM Mono',monospace;
+  padding:1px 6px;border-radius:3px;margin-left:5px;vertical-align:middle;
+  letter-spacing:.05em;white-space:nowrap;
+}
+.tag-hi{background:var(--amber-lt);border:1px solid #F6C07A;color:var(--amber);}
+.tag-ex{background:var(--red-lt);border:1px solid #EFAAAA;color:var(--red);}
+.alloc-v{font-family:'DM Mono',monospace;font-size:13px;color:var(--ink-mid);}
+.type-pill{
+  display:inline-block;background:var(--surface-2);border:1px solid var(--border);
+  font-size:11px;padding:2px 8px;border-radius:100px;color:var(--ink-mid);white-space:nowrap;
+}
+.men-wrap{display:flex;align-items:center;gap:7px;}
+.men-num{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;min-width:16px;}
+.men-bar{height:6px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:3px;min-width:4px;}
+
+/* ── YIELD LINK ── */
+.yield-link{
+  display:inline-flex;align-items:center;gap:5px;
+  text-decoration:none;border-radius:4px;padding:2px 4px 2px 0;
+  transition:opacity .15s;
+}
+.yield-link:hover{opacity:.75;}
+.sa-icon{
+  font-size:10px;color:var(--gold-dim);opacity:.7;
+  font-family:'DM Mono',monospace;
+}
+
+/* ── ANALYSIS ── */
+.ana-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;}
+.ana-block{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px;box-shadow:var(--sh);}
+.ana-block h3{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+.ana-icon{width:28px;height:28px;background:var(--gold-pale);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.ana-block p{color:var(--ink-mid);font-size:13.5px;line-height:1.78;}
+.callout{background:var(--amber-lt);border-left:3px solid var(--amber);padding:12px 15px;border-radius:0 var(--rs) var(--rs) 0;margin-top:11px;font-size:13px;color:var(--ink-mid);}
+.callout strong{color:var(--amber);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,.35);text-align:center;padding:34px 24px;font-size:12px;font-family:'DM Mono',monospace;line-height:2.1;}
+footer span{color:rgba(201,168,76,.65);}
+
+@media(max-width:768px){
+  .hero{padding:46px 18px 38px;}
+  .metrics{grid-template-columns:repeat(2,1fr);}
+  .top-grid,.ana-grid{grid-template-columns:1fr;}
+  .name-c{max-width:140px;}
+}
+@media(max-width:420px){
+  .metrics{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Armchair Insider Lounge</div>
+  <h1><em>Weekly Buy</em> Summary</h1>
+  <p class="hero-date">May 18 – May 24, 2026 &nbsp;·&nbsp; Community Activity Report</p>
+  <p class="hero-desc">A curated snapshot of tickers recently bought or discussed by community members — ranked by mentions, enriched with asset class and yield context, and presented for educational review.</p>
+  <span class="hero-disc">⚠ For community discussion and education only. Not financial advice.</span>
+</section>
+
+<!-- METRICS -->
+<div class="wrap">
+<section class="section">
+  <p class="sec-eye">◆ At a Glance</p>
+  <h2 class="sec-title">Weekly Metrics</h2>
+  <div class="rule"></div>
+  <div class="metrics">
+    <div class="m-card">
+      <div class="m-label">Tickers Mentioned</div>
+      <div class="m-val gold">18</div>
+      <div class="m-meta">Unique tickers across all buys</div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Total Buy Mentions</div>
+      <div class="m-val gold">22</div>
+      <div class="m-meta">Aggregated across all members this week</div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Most Mentioned</div>
+      <div class="m-val" style="font-size:22px;">MAIN</div>
+      <div class="m-meta">7 mentions — clear community favorite</div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Highest Yield</div>
+      <div class="m-val green">68.05%</div>
+      <div class="m-meta">ZVOL — Volatility Premium Plus ETF</div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Top Asset Class</div>
+      <div class="m-val" style="font-size:20px;">Covered Call ETFs</div>
+      <div class="m-meta">Most represented category this week</div>
+    </div>
+    <div class="m-card">
+      <div class="m-label">Average Yield</div>
+      <div class="m-val green">14.96%</div>
+      <div class="m-meta">Across all 18 tickers this week</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- TOP ACTIVITY -->
+<div style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;">
+<div class="wrap">
+  <p class="sec-eye">◆ Top Movers</p>
+  <h2 class="sec-title">Highest-Activity Tickers</h2>
+  <div class="rule"></div>
+  <div class="top-grid">
+
+    <div class="top-card featured">
+      <div class="top-card-head">
+        <span class="top-ticker">MAIN</span>
+        <span class="mention-badge"><span class="dot"></span>7 mentions</span>
+      </div>
+      <div class="top-name">Main Street Capital Corporation</div>
+      <div class="top-meta">
+        <span class="top-pill">BDC</span>
+        <span class="top-pill green">8.70% yield</span>
+      </div>
+    </div>
+
+    <div class="top-card featured">
+      <div class="top-card-head">
+        <span class="top-ticker">NIHI</span>
+        <span class="mention-badge"><span class="dot"></span>2 mentions</span>
+      </div>
+      <div class="top-name">NEOS MSCI EAFE High Income ETF</div>
+      <div class="top-meta">
+        <span class="top-pill">International Covered Call ETF</span>
+        <span class="top-pill green">10.17% yield</span>
+      </div>
+    </div>
+
+    <div class="top-card featured">
+      <div class="top-card-head">
+        <span class="top-ticker">EMO</span>
+        <span class="mention-badge"><span class="dot"></span>2 mentions</span>
+      </div>
+      <div class="top-name">ClearBridge Energy Midstream Opportunity Fund Inc</div>
+      <div class="top-meta">
+        <span class="top-pill">Energy Infrastructure CEF</span>
+        <span class="top-pill green">8.31% yield</span>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="top-card-head" style="flex-wrap:wrap;gap:6px;">
+        <span class="top-ticker" style="font-size:14px;padding:3px 10px;">1-Mention Cluster</span>
+        <span class="mention-badge"><span class="dot"></span>15 tickers · 1 each</span>
+      </div>
+      <div class="top-name" style="margin-bottom:8px;">ZVOL · XLEI · PFFA · PEO · MLPI · MEGI · KSLV · KCOP · IWMI · IDVO · GTY · EPR · CAG · AVK · AGNCO</div>
+      <div class="top-meta">
+        <span class="top-pill">Options · Bonds · Preferred · REITs · Consumer · CEFs</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="top-interpret">
+    <strong>Community Signal:</strong> MAIN once again leads decisively with 7 mentions, confirming its status as the community's cornerstone BDC holding for a second consecutive week. NIHI and EMO each captured 2 mentions, reflecting growing interest in international income strategies and energy midstream infrastructure. The remaining 15 tickers — spanning volatility strategies, high-yield bonds, copper, silver, REITs, consumer staples, and convertible bonds — signal notably broad diversification this week with no concentration in any single secondary theme.
+  </div>
+</div>
+</div>
+
+<!-- CHARTS -->
+<div class="chart-bg">
+<div class="wrap section">
+  <p class="sec-eye">◆ Visual Analytics</p>
+  <h2 class="sec-title">Weekly Buy Breakdown</h2>
+  <div class="rule"></div>
+  <div class="charts-grid">
+
+    <div class="c-card">
+      <div class="c-title">Top Tickers by Mentions</div>
+      <div class="c-sub">All tickers with 2 or more mentions highlighted</div>
+      <div class="c-wrap"><canvas id="mentChart" height="280"></canvas></div>
+    </div>
+
+    <div class="c-card">
+      <div class="c-title">Top 10 Tickers by Yield</div>
+      <div class="c-sub">Color-coded by yield level</div>
+      <div class="c-wrap"><canvas id="yieldChart" height="280"></canvas></div>
+    </div>
+
+    <div class="c-card">
+      <div class="c-title">Asset Class Distribution</div>
+      <div class="c-sub">Share of tickers by broad category</div>
+      <div class="c-wrap" style="max-width:400px;margin:0 auto;"><canvas id="donutChart" height="260"></canvas></div>
+    </div>
+
+    <div class="c-card">
+      <div class="c-title">Yield vs. Mentions</div>
+      <div class="c-sub">Bubble size = relative mentions · color-coded by yield level</div>
+      <div class="c-wrap"><canvas id="scatChart" height="280"></canvas></div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- TABLE -->
+<div class="wrap">
+<section class="section">
+  <p class="sec-eye">◆ Full List</p>
+  <h2 class="sec-title">All 18 Tickers This Week</h2>
+  <div class="rule"></div>
+  <div class="tbl-ctrl">
+    <input type="text" class="s-box" id="sBox" placeholder="Search ticker or name…" oninput="filterTbl()">
+    <button class="f-btn active" data-f="all"   onclick="setF('all')">All</button>
+    <button class="f-btn"        data-f="BDC"   onclick="setF('BDC')">BDC</button>
+    <button class="f-btn"        data-f="CEF"   onclick="setF('CEF')">CEF</button>
+    <button class="f-btn"        data-f="ETF"   onclick="setF('ETF')">ETF</button>
+    <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
+    <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
+    <span class="r-count" id="rCount">18 tickers</span>
+  </div>
+  <div class="tbl-wrap">
+    <table id="mainTbl">
+      <thead>
+        <tr>
+          <th onclick="sortT(0)" data-c="0">#</th>
+          <th onclick="sortT(1)" data-c="1">Ticker</th>
+          <th onclick="sortT(2)" data-c="2">Name</th>
+          <th onclick="sortT(3)" data-c="3">Mentions</th>
+          <th onclick="sortT(4)" data-c="4">Asset Class</th>
+          <th onclick="sortT(5)" data-c="5">Yield</th>
+        </tr>
+      </thead>
+      <tbody id="tBody"></tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<!-- ANALYSIS -->
+<div style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;">
+<div class="wrap">
+  <p class="sec-eye">◆ Community Observations</p>
+  <h2 class="sec-title">Weekly Analysis</h2>
+  <div class="rule"></div>
+  <div class="ana-grid">
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">📊</span> Most-Mentioned Tickers</h3>
+      <p>MAIN leads this week again with 7 mentions — matching its prior week dominance — cementing its role as the community's premier BDC holding for back-to-back weeks. NIHI and EMO each earned 2 mentions, signaling budding interest in international covered call income and energy midstream infrastructure respectively. The remaining 15 tickers each received one mention, reflecting a notably diverse spread of ideas this week.</p>
+    </div>
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">🏗️</span> Dominant Asset Classes</h3>
+      <p>Covered call ETFs remain the most represented category, with NIHI, MLPI, KSLV, KCOP, and IWMI spanning international equity, energy infrastructure, silver, copper, and small-cap exposures. Energy and infrastructure appear prominently via EMO, MLPI, PEO, and MEGI. CEFs cover bond income (AVK, PDO), preferred securities (PTA), and real asset strategies. REITs (GTY, EPR) and a rare consumer staples stock (CAG) round out a notably eclectic week.</p>
+    </div>
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">⚡</span> High-Yield Tickers</h3>
+      <p>ZVOL leads at an exceptional 68.05%, followed by KSLV at 27.54% and KCOP at 15.84%. ZVOL is a volatility-premium strategy ETF — its yield reflects option premium harvesting tied to volatility index instruments, which can be highly variable. KSLV and KCOP are precious and base metals covered call strategies. XLEI at 13.80% provides high-yield energy bond exposure as a less common fixed-income angle.</p>
+      <div class="callout"><strong>Note:</strong> Yields exceeding 40–50% — and especially volatility-linked strategies — often reflect option premium capture or return of capital, not recurring organic income. These require individual evaluation beyond the headline number.</div>
+    </div>
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">⚖️</span> Yield ≠ Quality</h3>
+      <p>Higher yield does not automatically mean a better or safer investment. Leverage, NAV erosion, distribution cut risk, tax treatment (ROC vs. ordinary income), and underlying volatility all affect real total return. Community members are encouraged to review each position independently using their own research and risk tolerance before acting.</p>
+    </div>
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">🌐</span> Diversification Observations</h3>
+      <p>This week's buys reflect exceptional breadth: BDC direct lending (MAIN), international covered calls (NIHI), energy midstream (EMO, MLPI), precious and base metals (KSLV, KCOP), infrastructure (MEGI), small-cap income (IWMI), high-yield energy bonds (XLEI), preferred securities (PFFA, AGNCO), natural resources (PEO), experiential and net-lease REITs (EPR, GTY), international dividend (IDVO), consumer staples (CAG), convertible bonds (AVK), and volatility premium (ZVOL). Geographic, structural, and sector diversity is notably high across the membership this week.</p>
+    </div>
+
+    <div class="ana-block">
+      <h3><span class="ana-icon">💡</span> Notable Single Mentions</h3>
+      <p>ZVOL (Volatility Premium Plus ETF) at 68.05% is an unusual addition — a volatility harvesting strategy rarely seen in community buys. CAG (Conagra Brands) at 10.32% stands out as the lone individual stock this week, offering consumer staples exposure in an otherwise ETF/CEF-dominated list. AGNCO is a preferred share of AGNC Investment Corp., adding mortgage REIT preferred income at 8.73%. KCOP (Kurv Copper) is a distinctive commodity play as copper demand narratives continue to build.</p>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; May 18 – May 24, 2026</div>
+  <div>Tickers shown are compatible with Seeking Alpha. Tickers for other websites and brokerages may vary.</div>
+  <div>For discussion and educational purposes only. Not investment advice.</div>
+</footer>
+
+<script>
+const DATA = [
+  {rank:1,  ticker:"MAIN",  name:"Main Street Capital Corporation",                              mentions:7, ac:"BDC",                                                    yield:8.70},
+  {rank:2,  ticker:"NIHI",  name:"NEOS MSCI EAFE High Income ETF",                               mentions:2, ac:"International Covered Call ETF",                         yield:10.17},
+  {rank:3,  ticker:"EMO",   name:"ClearBridge Energy Midstream Opportunity Fund Inc",             mentions:2, ac:"Energy Infrastructure CEF",                              yield:8.31},
+  {rank:4,  ticker:"ZVOL",  name:"Volatility Premium Plus ETF",                                  mentions:1, ac:"Volatility / Options Strategy ETF",                      yield:68.05},
+  {rank:5,  ticker:"XLEI",  name:"BondBloxx USD High Yield Energy Sector Bond ETF",              mentions:1, ac:"High Yield Energy Bond ETF",                             yield:13.80},
+  {rank:6,  ticker:"PFFA",  name:"Virtus InfraCap U.S. Preferred Stock ETF",                     mentions:1, ac:"Preferred Stock ETF",                                    yield:9.67},
+  {rank:7,  ticker:"PEO",   name:"Adams Natural Resources Fund, Inc.",                           mentions:1, ac:"Energy & Natural Resources CEF",                         yield:7.87},
+  {rank:8,  ticker:"MLPI",  name:"NEOS MLP & Energy Infrastructure High Income ETF",             mentions:1, ac:"MLP & Energy Infrastructure Covered Call ETF",           yield:14.72},
+  {rank:9,  ticker:"MEGI",  name:"NYLI CBRE Global Infrastructure Megatrends Term Fund",         mentions:1, ac:"Infrastructure CEF",                                     yield:9.77},
+  {rank:10, ticker:"KSLV",  name:"Kurv Silver Enhanced Income ETF",                              mentions:1, ac:"Precious Metals Covered Call ETF",                       yield:27.54},
+  {rank:11, ticker:"KCOP",  name:"Kurv Copper Enhanced Income ETF",                              mentions:1, ac:"Commodities / Copper Covered Call ETF",                  yield:15.84},
+  {rank:12, ticker:"IWMI",  name:"NEOS Russell 2000 High Income ETF",                            mentions:1, ac:"Small Cap Covered Call ETF",                             yield:14.47},
+  {rank:13, ticker:"IDVO",  name:"Amplify CWP International Enhanced Dividend Income ETF",       mentions:1, ac:"International Dividend ETF",                             yield:5.95},
+  {rank:14, ticker:"GTY",   name:"Getty Realty Corp.",                                           mentions:1, ac:"REIT",                                                   yield:5.84},
+  {rank:15, ticker:"EPR",   name:"EPR Properties",                                               mentions:1, ac:"Experiential REIT",                                      yield:6.35},
+  {rank:16, ticker:"CAG",   name:"Conagra Brands, Inc.",                                         mentions:1, ac:"Consumer Staples Stock",                                 yield:10.32},
+  {rank:17, ticker:"AVK",   name:"Advent Convertible & Income Fund",                             mentions:1, ac:"Convertible Bond & Income CEF",                          yield:11.07},
+  {rank:18, ticker:"AGNCO", name:"AGNC Investment Corp. 6.5% DP SH PFD E",                       mentions:1, ac:"Mortgage REIT Preferred Stock",                          yield:8.73},
+];
+
+// ─── TABLE ───
+let sortCol=0, sortDir=1, curFilter='all';
+
+function yC(y){return y>=50?'yield-ex':y>=20?'yield-hi':'';}
+function yTag(y){
+  if(y>=50) return '<span class="tag tag-ex">VERY HIGH</span>';
+  if(y>=20) return '<span class="tag tag-hi">HIGH</span>';
+  return '';
+}
+
+function renderTbl(rows){
+  const maxM=Math.max(...DATA.map(d=>d.mentions));
+  document.getElementById('tBody').innerHTML=rows.map(d=>`
+    <tr class="${d.mentions>=2?'hi':''}">
+      <td class="rank-c">${d.rank}</td>
+      <td><span class="t-badge">${d.ticker}</span></td>
+      <td class="name-c" title="${d.name}">${d.name}</td>
+      <td>
+        <div class="men-wrap">
+          <span class="men-num">${d.mentions}</span>
+          <div class="men-bar" style="width:${Math.round(d.mentions/maxM*70)}px"></div>
+        </div>
+      </td>
+      <td><span class="type-pill">${d.ac}</span></td>
+      <td><a href="https://seekingalpha.com/symbol/${d.ticker}" target="_blank" rel="noopener" class="yield-link"><span class="yield-v ${yC(d.yield)}">${d.yield.toFixed(2)}%</span>${yTag(d.yield)}<span class="sa-icon">↗</span></a></td>
+    </tr>`).join('');
+  document.getElementById('rCount').textContent=`${rows.length} ticker${rows.length!==1?'s':''}`;
+}
+
+function getRows(){
+  let r=[...DATA];
+  const q=document.getElementById('sBox').value.toLowerCase().trim();
+  if(q) r=r.filter(d=>d.ticker.toLowerCase().includes(q)||d.name.toLowerCase().includes(q));
+  if(curFilter==='BDC')  r=r.filter(d=>d.ac.includes('BDC'));
+  else if(curFilter==='CEF')  r=r.filter(d=>d.ac.includes('CEF'));
+  else if(curFilter==='ETF')  r=r.filter(d=>d.ac.includes('ETF'));
+  else if(curFilter==='hi2')  r=r.filter(d=>d.mentions>=2);
+  else if(curFilter==='hy20') r=r.filter(d=>d.yield>=20);
+  return r;
+}
+function filterTbl(){renderTbl(getRows());}
+function setF(f){
+  curFilter=f;
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.toggle('active',b.dataset.f===f));
+  filterTbl();
+}
+function sortT(col){
+  document.querySelectorAll('thead th').forEach((th,i)=>{th.classList.remove('sa','sd');});
+  if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=1;}
+  document.querySelectorAll('thead th')[col].classList.add(sortDir===1?'sa':'sd');
+  const keys=['rank','ticker','name','mentions','ac','yield'];
+  const rows=getRows().sort((a,b)=>{
+    let av=a[keys[col]],bv=b[keys[col]];
+    return(typeof av==='string'?av.localeCompare(bv):(av-bv))*sortDir;
+  });
+  renderTbl(rows);
+}
+renderTbl(DATA);
+
+// ─── CHARTS ───
+const GOLD='#C9A84C', GOLD2='#E8C97A', GREEN='#1F6B47', AMBER='#9E5A0A', RED='#8B1A1A', INK='#18150F';
+Chart.defaults.font.family="'DM Sans',sans-serif";
+Chart.defaults.color='#7A6F5E';
+
+// 1. Mentions bar — all sorted by mentions desc
+const topM=[...DATA].sort((a,b)=>b.mentions-a.mentions);
+new Chart(document.getElementById('mentChart'),{
+  type:'bar',
+  data:{
+    labels:topM.map(d=>d.ticker),
+    datasets:[{
+      data:topM.map(d=>d.mentions),
+      backgroundColor:topM.map(d=>d.mentions>=7?GOLD:d.mentions>=2?GOLD2:'#DDD3B8'),
+      borderRadius:5,borderSkipped:false,
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw} mention${c.raw!==1?'s':''}`}}},
+    scales:{
+      x:{grid:{display:false},border:{display:false},ticks:{font:{size:10}}},
+      y:{beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{stepSize:1}}
+    }
+  }
+});
+
+// 2. Yield bar top10
+const topY=[...DATA].sort((a,b)=>b.yield-a.yield).slice(0,10);
+new Chart(document.getElementById('yieldChart'),{
+  type:'bar',
+  data:{
+    labels:topY.map(d=>d.ticker),
+    datasets:[{
+      data:topY.map(d=>d.yield),
+      backgroundColor:topY.map(d=>d.yield>=50?RED:d.yield>=20?AMBER:GREEN),
+      borderRadius:5,borderSkipped:false,
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.toFixed(2)}%`}}},
+    scales:{
+      x:{grid:{display:false},border:{display:false}},
+      y:{beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{callback:v=>v+'%'}}
+    }
+  }
+});
+
+// 3. Donut — broad categories
+function broadCat(ac){
+  const a=ac.toLowerCase();
+  if(a.includes('bdc')) return 'BDC / Direct Lending';
+  if(a.includes('covered call')||a.includes('buywrite')||a.includes('option income')) return 'Covered Call ETF';
+  if(a.includes('cef')&&(a.includes('infra')||a.includes('energy')||a.includes('utility')||a.includes('convertible'))) return 'Infra / Energy / Other CEF';
+  if(a.includes('cef')&&(a.includes('bond')||a.includes('credit')||a.includes('debt'))) return 'Credit / Bond CEF';
+  if(a.includes('cef')) return 'Other CEF';
+  if(a.includes('preferred')) return 'Preferred / Income';
+  if(a.includes('reit')) return 'Real Estate';
+  if(a.includes('dividend')||a.includes('equity etf')||a.includes('equity cef')||a.includes('global equity')) return 'Dividend / Equity';
+  if(a.includes('bond etf')||a.includes('high yield')) return 'Fixed Income ETF';
+  if(a.includes('volatility')||a.includes('options strategy')) return 'Volatility / Options';
+  if(a.includes('consumer')) return 'Individual Stock';
+  return 'Other';
+}
+const catMap={};
+DATA.forEach(d=>{const c=broadCat(d.ac);catMap[c]=(catMap[c]||0)+1;});
+const catSorted=Object.entries(catMap).sort((a,b)=>b[1]-a[1]);
+const PAL=[GOLD,'#2E7D5A','#1A3F6F','#6B3A2A','#805AD5','#B45309','#C4A882','#4A5568','#2D6A4F','#E76F51'];
+new Chart(document.getElementById('donutChart'),{
+  type:'doughnut',
+  data:{
+    labels:catSorted.map(c=>c[0]),
+    datasets:[{
+      data:catSorted.map(c=>c[1]),
+      backgroundColor:PAL,
+      borderWidth:2,borderColor:'#FDFCF8',hoverOffset:6,
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{padding:11,font:{size:11},boxWidth:12,usePointStyle:true}},
+      tooltip:{callbacks:{label:c=>`${c.label}: ${c.raw} tickers`}}
+    },
+    cutout:'55%'
+  }
+});
+
+// 4. Bubble scatter yield vs mentions
+const scatD=DATA.map(d=>({
+  x:d.mentions+(Math.random()*.12-.06),
+  y:d.yield>75?75:d.yield,
+  label:d.ticker,
+  actualY:d.yield,
+  mentions:d.mentions,
+  r:Math.max(5,d.mentions*3.5),
+  ex:d.yield>=50,
+  hi:d.yield>=20,
+}));
+new Chart(document.getElementById('scatChart'),{
+  type:'bubble',
+  data:{datasets:[{
+    label:'Tickers',
+    data:scatD,
+    backgroundColor:scatD.map(d=>d.ex?'rgba(139,26,26,.55)':d.hi?'rgba(158,90,10,.55)':'rgba(31,107,71,.48)'),
+    borderColor:scatD.map(d=>d.ex?RED:d.hi?AMBER:GREEN),
+    borderWidth:1.5,
+  }]},
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>{
+        const d=c.raw;
+        const yDisplay=d.ex?`${d.actualY.toFixed(2)}% ⚠`:`${d.actualY.toFixed(2)}%`;
+        return[`${d.label}`,`Yield: ${yDisplay}`,`Mentions: ${d.mentions}`];
+      }}}
+    },
+    scales:{
+      x:{title:{display:true,text:'Mentions',font:{size:12}},min:0,max:8.5,grid:{color:'#EDE4D0'},border:{display:false},ticks:{stepSize:1}},
+      y:{title:{display:true,text:'Yield (%, capped at 75%)',font:{size:12}},beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{callback:v=>v+'%'}}
+    }
+  }
+});
+
+</script>
+</body>
+</html>
