@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armchair Insider — Weekly Buy Summary · June 8–14, 2026</title>
+<title>Armchair Insider — Weekly Buy Summary · June 15–21, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -235,8 +237,120 @@ footer span{color:rgba(201,168,76,.65);}
 @media(max-width:420px){
   .metrics{grid-template-columns:1fr 1fr;}
 }
+
+
+/* 2026 simplified interface refresh */
+:root{
+  --gold:#C9A84C;
+  --gold-lt:#E8C97A;
+  --gold-pale:#FBF5E6;
+  --ink:#1D1B16;
+  --ink-mid:#4D483E;
+  --ink-lt:#777064;
+  --surface:#F7F5EF;
+  --surface-2:#F1EEE6;
+  --surface-3:#E8E2D5;
+  --border:#DDD7C9;
+  --r:16px;
+  --rs:10px;
+  --sh:0 8px 24px rgba(43,37,24,.055);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(201,168,76,.10),transparent 28rem),
+    var(--surface);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.55;
+}
+.wrap{max-width:1120px}
+.hero{
+  min-height:0!important;
+  padding:clamp(44px,7vw,78px) 24px!important;
+  background:
+    linear-gradient(145deg,rgba(29,27,22,.97),rgba(55,47,29,.95))!important;
+  border-bottom:3px solid var(--gold)!important;
+}
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(2.25rem,5vw,4rem)!important;
+  letter-spacing:-.035em!important;
+}
+.hero-eyebrow,.sec-eye,.section-eyebrow{
+  color:var(--gold-dim,#8A6F32)!important;
+  letter-spacing:.11em!important;
+}
+.hero-desc{max-width:720px!important}
+.section{padding-top:46px!important;padding-bottom:46px!important}
+.sec-title,.section-title{
+  color:var(--ink)!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(1.55rem,3vw,2.05rem)!important;
+  letter-spacing:-.025em!important;
+}
+.rule{width:52px!important;height:3px!important;background:var(--gold)!important}
+.metrics,.charts-grid,.ana-grid,.insights-grid,.top-grid{
+  gap:16px!important;
+}
+.m-card,.c-card,.ana-block,.insight-card,.top-card,.stat-card,.chart-card,.analysis-card{
+  background:rgba(255,255,255,.92)!important;
+  border:1px solid var(--border)!important;
+  border-radius:16px!important;
+  box-shadow:var(--sh)!important;
+}
+.m-card:hover,.top-card:hover,.insight-card:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 30px rgba(43,37,24,.085)!important;
+}
+.m-card:before,.top-card.featured:before{background:var(--gold)!important}
+.chart-bg,
+div[style*="background:var(--surface-2)"]{
+  background:transparent!important;
+  border-color:var(--border)!important;
+}
+.charts-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important}
+.tbl-ctrl{
+  padding:12px!important;
+  background:rgba(255,255,255,.8)!important;
+  border:1px solid var(--border)!important;
+  border-radius:14px 14px 0 0!important;
+}
+.s-box,.f-btn{
+  border-color:var(--border)!important;
+  border-radius:9px!important;
+}
+.f-btn.active,.f-btn:hover{
+  color:var(--ink)!important;
+  background:var(--gold-pale)!important;
+  border-color:var(--gold)!important;
+}
+.tbl-wrap{
+  border:1px solid var(--border)!important;
+  border-top:0!important;
+  border-radius:0 0 14px 14px!important;
+  box-shadow:none!important;
+}
+thead th{
+  color:var(--ink-mid)!important;
+  background:#F0ECE2!important;
+  border-color:var(--border)!important;
+}
+tbody tr:hover{background:var(--gold-pale)!important}
+footer{background:#1D1B16!important;border-top:3px solid var(--gold)!important}
+button[onclick^="download_"]{
+  color:var(--ink)!important;
+  background:var(--gold)!important;
+  border-radius:9px!important;
+}
+@media(max-width:700px){
+  .section{padding-top:34px!important;padding-bottom:34px!important}
+  .hero{padding:38px 18px!important}
+  .m-card,.c-card,.ana-block,.insight-card,.top-card{padding:18px!important}
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="premium.css?v=11">
 </head>
 <body>
 
@@ -244,7 +358,7 @@ footer span{color:rgba(201,168,76,.65);}
 <section class="hero">
   <div class="hero-eyebrow">Armchair Insider Lounge</div>
   <h1><em>Weekly Buy</em> Summary</h1>
-  <p class="hero-date">June 8 – June 14, 2026 &nbsp;·&nbsp; Community Activity Report</p>
+  <p class="hero-date">June 15 – June 21, 2026 &nbsp;·&nbsp; Armchair Community Report</p>
   <p class="hero-desc">A curated snapshot of tickers recently bought or discussed by community members — ranked by mentions, enriched with asset class and yield context, and presented for educational review.</p>
   <span class="hero-disc">⚠ For community discussion and education only. Not financial advice.</span>
 </section>
@@ -258,115 +372,40 @@ footer span{color:rgba(201,168,76,.65);}
   <div class="metrics">
     <div class="m-card">
       <div class="m-label">Tickers Mentioned</div>
-      <div class="m-val gold">22</div>
+      <div class="m-val gold">35</div>
       <div class="m-meta">Unique tickers across all buys</div>
     </div>
     <div class="m-card">
       <div class="m-label">Total Buy Mentions</div>
-      <div class="m-val gold">40</div>
+      <div class="m-val gold">43</div>
       <div class="m-meta">Aggregated across all members this week</div>
     </div>
     <div class="m-card">
       <div class="m-label">Most Mentioned</div>
-      <div class="m-val" style="font-size:22px;">IAUI</div>
-      <div class="m-meta">7 mentions — NEOS Gold High Income ETF</div>
+      <div class="m-val" style="font-size:22px;">PFFA &amp; STRC</div>
+      <div class="m-meta">3 mentions each — preferred-income leaders</div>
     </div>
     <div class="m-card">
       <div class="m-label">Highest Yield</div>
-      <div class="m-val green">42.27%</div>
-      <div class="m-meta">SPCI — Tuttle Capital Space Industry Income ETF</div>
+      <div class="m-val green">50.00%</div>
+      <div class="m-meta">USOY — Defiance Oil Enhanced Options Income ETF</div>
     </div>
     <div class="m-card">
       <div class="m-label">Top Asset Class</div>
-      <div class="m-val" style="font-size:20px;">Gold Covered Call ETFs</div>
-      <div class="m-meta">Most active category by mentions this week</div>
+      <div class="m-val" style="font-size:20px;">CEFs</div>
+      <div class="m-meta">17 tickers and 19 total mentions this week</div>
     </div>
     <div class="m-card">
       <div class="m-label">Average Yield</div>
-      <div class="m-val green">15.81%</div>
-      <div class="m-meta">Across all 22 tickers this week</div>
+      <div class="m-val green">11.41%</div>
+      <div class="m-meta">Across all 35 tickers this week</div>
     </div>
   </div>
 </section>
 </div>
 
-<!-- TOP ACTIVITY -->
-<div style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;">
-<div class="wrap">
-  <p class="sec-eye">◆ Top Movers</p>
-  <h2 class="sec-title">Highest-Activity Tickers</h2>
-  <div class="rule"></div>
-  <div class="top-grid">
-
-    <div class="top-card featured">
-      <div class="top-card-head">
-        <span class="top-ticker">IAUI</span>
-        <span class="mention-badge"><span class="dot"></span>7 mentions</span>
-      </div>
-      <div class="top-name">NEOS Gold High Income ETF</div>
-      <div class="top-meta">
-        <span class="top-pill">Gold Covered Call ETF</span>
-        <span class="top-pill green">12.14% yield</span>
-      </div>
-    </div>
-
-    <div class="top-card featured">
-      <div class="top-card-head">
-        <span class="top-ticker">KGLD</span>
-        <span class="mention-badge"><span class="dot"></span>5 mentions</span>
-      </div>
-      <div class="top-name">Kurv Gold Enhanced Income ETF</div>
-      <div class="top-meta">
-        <span class="top-pill">Gold Covered Call ETF</span>
-        <span class="top-pill green">15.52% yield</span>
-      </div>
-    </div>
-
-    <div class="top-card featured">
-      <div class="top-card-head">
-        <span class="top-ticker">OVL &amp; KSLV</span>
-        <span class="mention-badge"><span class="dot"></span>3 mentions each</span>
-      </div>
-      <div class="top-name">Overlay Shares Large Cap Equity ETF &amp; Kurv Silver Enhanced Income ETF</div>
-      <div class="top-meta">
-        <span class="top-pill">Large-Cap Equity Covered Call ETF</span>
-        <span class="top-pill">Silver Covered Call ETF</span>
-        <span class="top-pill green">6.31% / 26.67% yield</span>
-      </div>
-    </div>
-
-    <div class="top-card">
-      <div class="top-card-head" style="flex-wrap:wrap;gap:6px;">
-        <span class="top-ticker" style="font-size:14px;padding:3px 10px;">2-Mention Cluster</span>
-        <span class="mention-badge"><span class="dot"></span>4 tickers · 2 each</span>
-      </div>
-      <div class="top-name" style="margin-bottom:8px;">SPCI · KCOP · FSCO · BTCI</div>
-      <div class="top-meta">
-        <span class="top-pill">Thematic Covered Call · Commodity &amp; Mining Covered Call · Credit CEF · Bitcoin Covered Call ETF</span>
-      </div>
-    </div>
-
-    <div class="top-card">
-      <div class="top-card-head" style="flex-wrap:wrap;gap:6px;">
-        <span class="top-ticker" style="font-size:14px;padding:3px 10px;">1-Mention Cluster</span>
-        <span class="mention-badge"><span class="dot"></span>14 tickers · 1 each</span>
-      </div>
-      <div class="top-name" style="margin-bottom:8px;">WU · UTG · STK · SATA · ROCY · ROCQ · QQQI · PDO · MLPI · KRP · GOF · FLO · BLOX · AOD</div>
-      <div class="top-meta">
-        <span class="top-pill">Financial Stock · Utility CEF · Tech CEF · Preferred · Covered Call · Covered Call · Covered Call · Bond CEF · MLP Covered Call · Energy Royalty · Bond CEF · Consumer Stock · Crypto Income · Global Equity CEF</span>
-      </div>
-    </div>
-
-  </div>
-  <div class="top-interpret">
-    <strong>Community Signal:</strong> Gold dominated the conversation this week. IAUI (NEOS Gold High Income ETF) led decisively with 7 mentions, followed by KGLD (Kurv Gold Enhanced Income ETF) at 5 — a clear signal that the community is actively building gold income exposure via covered call strategies. OVL and KSLV tied at 3 mentions each, adding large-cap equity and silver to the metals-and-income theme. The 2-mention cluster — SPCI, KCOP, FSCO, and BTCI — spans thematic covered calls, commodities, private credit, and Bitcoin income. Fourteen tickers received a single mention, covering everything from preferred securities (SATA) and utility CEFs (UTG) to energy royalties (KRP) and global equity income (AOD).
-  </div>
-</div>
-</div>
-
-<!-- CHARTS -->
-<div class="chart-bg">
-<div class="wrap section">
+<div class="chart-bg summary-analytics">
+<div class="wrap section summary-analytics-inner">
   <p class="sec-eye">◆ Visual Analytics</p>
   <h2 class="sec-title">Weekly Buy Breakdown</h2>
   <div class="rule"></div>
@@ -390,11 +429,7 @@ footer span{color:rgba(201,168,76,.65);}
       <div class="c-wrap" style="max-width:400px;margin:0 auto;"><canvas id="donutChart" height="260"></canvas></div>
     </div>
 
-    <div class="c-card">
-      <div class="c-title">Yield vs. Mentions</div>
-      <div class="c-sub">Bubble size = relative mentions · color-coded by yield level</div>
-      <div class="c-wrap"><canvas id="scatChart" height="280"></canvas></div>
-    </div>
+    
 
   </div>
 </div>
@@ -404,7 +439,7 @@ footer span{color:rgba(201,168,76,.65);}
 <div class="wrap">
 <section class="section">
   <p class="sec-eye">◆ Full List</p>
-  <h2 class="sec-title">All 22 Tickers This Week</h2>
+  <h2 class="sec-title">All 35 Tickers This Week</h2>
   <div class="rule"></div>
   <div class="tbl-ctrl">
     <input type="text" class="s-box" id="sBox" placeholder="Search ticker or name…" oninput="filterTbl()">
@@ -415,7 +450,7 @@ footer span{color:rgba(201,168,76,.65);}
     <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
     <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
     <button onclick="download_mainTbl()" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:#1F6B47;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;white-space:nowrap;" onmouseover="this.style.background='#174f34'" onmouseout="this.style.background='#1F6B47'">⬇ Download Table as Excel</button>
-    <span class="r-count" id="rCount">22 tickers</span>
+    <span class="r-count" id="rCount">35 tickers</span>
   </div>
   <div class="tbl-wrap">
     <table id="mainTbl">
@@ -435,80 +470,50 @@ footer span{color:rgba(201,168,76,.65);}
 </section>
 </div>
 
-<!-- ANALYSIS -->
-<div style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;">
-<div class="wrap">
-  <p class="sec-eye">◆ Community Observations</p>
-  <h2 class="sec-title">Weekly Analysis</h2>
-  <div class="rule"></div>
-  <div class="ana-grid">
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">📊</span> Most-Mentioned Tickers</h3>
-      <p>Gold income strategies commanded the week by a wide margin. IAUI (NEOS Gold High Income ETF) led with 7 mentions, and KGLD (Kurv Gold Enhanced Income ETF) followed at 5 — together accounting for 30% of all mentions. OVL (large-cap equity covered call) and KSLV (silver covered call) tied at 3 mentions each. The 2-mention cluster — SPCI, KCOP, FSCO, and BTCI — adds thematic covered calls, commodity &amp; mining income, private credit, and Bitcoin income to the mix.</p>
-    </div>
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">🏗️</span> Dominant Asset Classes</h3>
-      <p>Covered call ETFs dominate this week, led by gold strategies (IAUI, KGLD), a silver play (KSLV), large-cap equity (OVL), a space-sector theme (SPCI), commodity &amp; mining (KCOP), Bitcoin income (BTCI), MLP &amp; energy infrastructure (MLPI), and broad index covered calls (ROCY, ROCQ, QQQI). CEFs appear via private credit (FSCO), utility equity (UTG), multi-asset income (GOF), bond income (PDO), technology equity (STK), and global equity (AOD). Individual stocks — WU (financial services) and FLO (consumer staples) — and a preferred security (SATA) round out the week.</p>
-    </div>
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">⚡</span> High-Yield Tickers</h3>
-      <p>SPCI leads at 42.27%, followed by BLOX at 36.00%, BTCI at 26.72%, KSLV at 26.67%, GOF at 19.79%, SATA at 13.80%, and MLPI at 14.76%. The thematic covered call (SPCI) and cryptocurrency income (BLOX) strategies occupy the top yield positions, reflecting aggressive option premium capture on volatile underlyings. KSLV (silver) adds precious-metals income to the high-yield tier.</p>
-      <div class="callout"><strong>Note:</strong> Yields exceeding 20–40% — particularly in thematic covered calls and crypto income ETFs — typically reflect option premium capture and may include return of capital. These require individual evaluation beyond the headline number.</div>
-    </div>
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">⚖️</span> Yield ≠ Quality</h3>
-      <p>Higher yield does not automatically mean a better or safer investment. Leverage, NAV erosion, distribution cut risk, tax treatment (ROC vs. ordinary income), and underlying volatility all affect real total return. Community members are encouraged to review each position independently using their own research and risk tolerance before acting.</p>
-    </div>
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">🌐</span> Diversification Observations</h3>
-      <p>This week's 22-ticker list is tightly focused but structurally diverse. The gold and precious metals theme (IAUI, KGLD, KSLV) is the clear anchor. Covered call strategies span six underlying exposures: gold, silver, large-cap equity, space sector, commodity &amp; mining, and Bitcoin. CEF representation covers five categories: private credit, utility equity, technology equity, multi-asset income, bond income, and global equity. Energy royalties (KRP) and individual consumer and financial stocks (FLO, WU) provide additional diversification beyond the income-ETF universe.</p>
-    </div>
-
-    <div class="ana-block">
-      <h3><span class="ana-icon">💡</span> Notable Single Mentions</h3>
-      <p>SPCI (Tuttle Capital Space Industry Income ETF) at 42.27% remains a yield outlier — a thematic covered call ETF whose income is driven by option premiums on a highly volatile space-sector basket. BLOX (Nicholas Crypto Income ETF) at 36.00% is a newer cryptocurrency income vehicle. KRP (Kimbell Royalty Partners) at 10.75% stands out as an energy royalty MLP — a less common but dividend-friendly structure for income investors. SATA (Strive Var Rate Series A Preferred) at 13.80% represents the growing preferred securities category from alternative asset managers.</p>
-    </div>
-
-  </div>
-</div>
-</div>
-
 <!-- FOOTER -->
 <footer>
-  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; June 8 – June 14, 2026</div>
+  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; June 15 – June 21, 2026</div>
   <div>Tickers shown are compatible with Seeking Alpha. Tickers for other websites and brokerages may vary.</div>
   <div>For discussion and educational purposes only. Not investment advice.</div>
 </footer>
 
 <script>
 const DATA = [
-  {rank:1,  ticker:"IAUI",  name:"NEOS Gold High Income ETF",                         mentions:7, ac:"Gold Covered Call ETF",                              yield:12.14},
-  {rank:2,  ticker:"KGLD",  name:"Kurv Gold Enhanced Income ETF",                      mentions:5, ac:"Gold Covered Call ETF",                              yield:15.52},
-  {rank:3,  ticker:"OVL",   name:"Overlay Shares Large Cap Equity ETF",                mentions:3, ac:"Large-Cap Equity Covered Call ETF",                  yield:6.31},
-  {rank:4,  ticker:"KSLV",  name:"Kurv Silver Enhanced Income ETF",                    mentions:3, ac:"Silver Covered Call ETF",                            yield:26.67},
-  {rank:5,  ticker:"SPCI",  name:"Tuttle Capital Space Industry Income ETF",           mentions:2, ac:"Thematic Covered Call ETF (Space Sector)",            yield:42.27},
-  {rank:6,  ticker:"KCOP",  name:"Kurv Copper & Mining Enhanced Income ETF",           mentions:2, ac:"Commodity & Mining Covered Call ETF",                yield:14.26},
-  {rank:7,  ticker:"FSCO",  name:"FS Credit Opportunities Corp.",                      mentions:2, ac:"Credit / Private Credit CEF",                        yield:14.54},
-  {rank:8,  ticker:"BTCI",  name:"NEOS Bitcoin High Income ETF",                       mentions:2, ac:"Bitcoin Covered Call ETF",                           yield:26.72},
-  {rank:9,  ticker:"WU",    name:"Western Union Company",                              mentions:1, ac:"Financial Services Stock",                            yield:12.45},
-  {rank:10, ticker:"UTG",   name:"Reaves Utility Income Fund",                         mentions:1, ac:"Utility Equity CEF",                                 yield:5.89},
-  {rank:11, ticker:"STK",   name:"Columbia Seligman Premium Technology Growth Fund",   mentions:1, ac:"Technology Equity CEF",                              yield:5.23},
-  {rank:12, ticker:"SATA",  name:"Strive, Inc. Var Rat Ser A Pr",                      mentions:1, ac:"Preferred Security",                                 yield:13.80},
-  {rank:13, ticker:"ROCY",  name:"JPMorgan Equity Premium Yield ETF",                  mentions:1, ac:"Covered Call ETF",                                   yield:11.93},
-  {rank:14, ticker:"ROCQ",  name:"JPMorgan Nasdaq Equity Premium Yield ETF",           mentions:1, ac:"Covered Call ETF",                                   yield:13.54},
-  {rank:15, ticker:"QQQI",  name:"NEOS Nasdaq-100 High Income ETF",                    mentions:1, ac:"Covered Call ETF",                                   yield:14.11},
-  {rank:16, ticker:"PDO",   name:"PIMCO Dynamic Income Opportunities Fund",            mentions:1, ac:"Multi-Sector Bond CEF",                              yield:11.94},
-  {rank:17, ticker:"MLPI",  name:"NEOS MLP & Energy Infrastructure High Income ETF",  mentions:1, ac:"MLP & Energy Infrastructure Covered Call ETF",       yield:14.76},
-  {rank:18, ticker:"KRP",   name:"Kimbell Royalty Partners, LP",                       mentions:1, ac:"Energy Royalty Partnership",                         yield:10.75},
-  {rank:19, ticker:"GOF",   name:"Guggenheim Strategic Opportunities Fund",            mentions:1, ac:"Multi-Asset Income CEF",                             yield:19.79},
-  {rank:20, ticker:"FLO",   name:"Flowers Foods, Inc.",                                mentions:1, ac:"Consumer Staples Stock",                             yield:6.42},
-  {rank:21, ticker:"BLOX",  name:"Nicholas Crypto Income ETF",                         mentions:1, ac:"Cryptocurrency Income ETF",                          yield:36.00},
-  {rank:22, ticker:"AOD",   name:"abrdn Total Dynamic Dividend Fund",                  mentions:1, ac:"Global Equity Income CEF",                           yield:12.73},
+  {rank:1,  ticker:"PFFA",     name:"Virtus InfraCap U.S. Preferred Stock ETF",                                mentions:3, ac:"ETF — Preferred stock",                         yield:9.67},
+  {rank:2,  ticker:"STRC",     name:"Strategy Variable Rate Series A Preferred Stock",                         mentions:3, ac:"Preferred stock",                               yield:12.98},
+  {rank:3,  ticker:"EMO",      name:"ClearBridge Energy Midstream Opportunity Fund",                           mentions:2, ac:"CEF — Energy midstream",                        yield:8.85},
+  {rank:4,  ticker:"KGLD",     name:"Kurv Gold Enhanced Income ETF",                                           mentions:2, ac:"ETF — Gold options income",                     yield:15.52},
+  {rank:5,  ticker:"MLPI",     name:"NEOS MLP & Energy Infrastructure High Income ETF",                        mentions:2, ac:"ETF — MLP/energy income",                       yield:14.76},
+  {rank:6,  ticker:"TYG",      name:"Tortoise Energy Infrastructure Corporation",                              mentions:2, ac:"CEF — Energy infrastructure",                   yield:13.40},
+  {rank:7,  ticker:"AOMD",     name:"Angel Oak Mortgage REIT 9% Senior Notes",                                 mentions:1, ac:"Exchange-traded debt",                          yield:9.81},
+  {rank:8,  ticker:"ARCC",     name:"Ares Capital Corporation",                                                mentions:1, ac:"BDC",                                           yield:10.65},
+  {rank:9,  ticker:"ASGI",     name:"abrdn Global Infrastructure Income Fund",                                 mentions:1, ac:"CEF — Global infrastructure",                   yield:12.44},
+  {rank:10, ticker:"CSWC",     name:"Capital Southwest Corporation",                                           mentions:1, ac:"BDC",                                           yield:11.14},
+  {rank:11, ticker:"CTA",      name:"Simplify Managed Futures Strategy ETF",                                   mentions:1, ac:"ETF — Managed futures",                         yield:5.33},
+  {rank:12, ticker:"DBMF",     name:"iMGP DBi Managed Futures Strategy ETF",                                   mentions:1, ac:"ETF — Managed futures",                         yield:5.17},
+  {rank:13, ticker:"ETW",      name:"Eaton Vance Tax-Managed Global Buy-Write Opportunities Fund",             mentions:1, ac:"CEF — Global covered call",                     yield:8.43},
+  {rank:14, ticker:"FFC",      name:"Flaherty & Crumrine Preferred Securities Income Fund",                    mentions:1, ac:"CEF — Preferred securities",                    yield:7.92},
+  {rank:15, ticker:"FGN",      name:"FGN F&G Annuities & Life, Inc. NT 53",                                    mentions:1, ac:"Exchange-traded debt",                          yield:8.21},
+  {rank:16, ticker:"GAB",      name:"Gabelli Equity Trust",                                                    mentions:1, ac:"CEF — Diversified equity",                      yield:10.93},
+  {rank:17, ticker:"GAM.PR.B", name:"General American Investors Company, Inc. PFD B 5.95%",                    mentions:1, ac:"Preferred stock",                               yield:6.00},
+  {rank:18, ticker:"HTD",      name:"John Hancock Tax-Advantaged Dividend Income Fund",                        mentions:1, ac:"CEF — Dividend/preferred income",               yield:7.56},
+  {rank:19, ticker:"JPC",      name:"Nuveen Preferred & Income Opportunities Fund",                            mentions:1, ac:"CEF — Preferred/fixed income",                  yield:9.59},
+  {rank:20, ticker:"JRS",      name:"Nuveen Real Estate Income Fund",                                          mentions:1, ac:"CEF — Real estate securities",                  yield:9.33},
+  {rank:21, ticker:"KCOP",     name:"Kurv Copper & Mining Enhanced Income ETF",                                mentions:1, ac:"ETF — Copper/mining income",                    yield:14.26},
+  {rank:22, ticker:"KYN",      name:"Kayne Anderson Energy Infrastructure Fund",                               mentions:1, ac:"CEF — Energy infrastructure",                   yield:7.69},
+  {rank:23, ticker:"MAIN",     name:"Main Street Capital Corporation",                                         mentions:1, ac:"BDC",                                           yield:8.59},
+  {rank:24, ticker:"NML",      name:"Neuberger Energy Infrastructure and Income Fund",                         mentions:1, ac:"CEF — Energy infrastructure",                   yield:8.77},
+  {rank:25, ticker:"OMAH",     name:"VistaShares Target 15 Berkshire Select Income ETF",                       mentions:1, ac:"ETF — Options income",                          yield:15.29},
+  {rank:26, ticker:"PBDC",     name:"Putnam BDC Income ETF",                                                   mentions:1, ac:"ETF — BDC income",                              yield:11.82},
+  {rank:27, ticker:"PDO",      name:"PIMCO Dynamic Income Opportunities Fund",                                 mentions:1, ac:"CEF — Multisector fixed income",                yield:11.84},
+  {rank:28, ticker:"PEO",      name:"Adams Natural Resources Fund",                                            mentions:1, ac:"CEF — Natural resources",                       yield:8.49},
+  {rank:29, ticker:"PTA",      name:"Cohen & Steers Tax-Advantaged Preferred Securities and Income Fund",      mentions:1, ac:"CEF — Preferred securities",                    yield:8.43},
+  {rank:30, ticker:"PTY",      name:"PIMCO Corporate & Income Opportunity Fund",                               mentions:1, ac:"CEF — Corporate/fixed income",                  yield:12.10},
+  {rank:31, ticker:"RFI",      name:"Cohen & Steers Total Return Realty Fund",                                 mentions:1, ac:"CEF — Real estate equity",                      yield:8.73},
+  {rank:32, ticker:"SPYI",     name:"NEOS S&P 500 High Income ETF",                                            mentions:1, ac:"ETF — S&P 500 options income",                  yield:12.08},
+  {rank:33, ticker:"THQ",      name:"abrdn Healthcare Opportunities Fund",                                     mentions:1, ac:"CEF — Healthcare equity",                       yield:11.61},
+  {rank:34, ticker:"TRIN",     name:"Trinity Capital",                                                        mentions:1, ac:"BDC",                                           yield:12.12},
+  {rank:35, ticker:"USOY",     name:"Defiance Oil Enhanced Options Income ETF",                                mentions:1, ac:"ETF — Oil options income",                      yield:50.00},
 ];
 
 // ─── TABLE ───
@@ -543,7 +548,7 @@ function renderTbl(rows){
 function getRows(){
   let r=[...DATA];
   const q=document.getElementById('sBox').value.toLowerCase().trim();
-  if(q) r=r.filter(d=>d.ticker.toLowerCase().includes(q)||d.name.toLowerCase().includes(q));
+  if(q) r=r.filter(d=>d.ticker.toLowerCase().includes(q)||d.name.toLowerCase().includes(q)||d.ac.toLowerCase().includes(q));
   if(curFilter==='BDC')  r=r.filter(d=>d.ac.includes('BDC'));
   else if(curFilter==='CEF')  r=r.filter(d=>d.ac.includes('CEF'));
   else if(curFilter==='ETF')  r=r.filter(d=>d.ac.includes('ETF'));
@@ -622,23 +627,17 @@ new Chart(document.getElementById('yieldChart'),{
 // 3. Donut — broad categories
 function broadCat(ac){
   const a=ac.toLowerCase();
-  if(a.includes('bdc')) return 'BDC / Direct Lending';
-  if(a.includes('covered call')||a.includes('buywrite')||a.includes('option income')) return 'Covered Call ETF';
-  if(a.includes('cef')&&(a.includes('infra')||a.includes('energy')||a.includes('utility')||a.includes('convertible'))) return 'Infra / Energy / Other CEF';
-  if(a.includes('cef')&&(a.includes('bond')||a.includes('credit')||a.includes('debt'))) return 'Credit / Bond CEF';
-  if(a.includes('cef')) return 'Other CEF';
-  if(a.includes('preferred')) return 'Preferred / Income';
-  if(a.includes('reit')) return 'Real Estate';
-  if(a.includes('dividend')||a.includes('equity etf')||a.includes('equity cef')||a.includes('global equity')) return 'Dividend / Equity';
-  if(a.includes('bond etf')||a.includes('high yield')) return 'Fixed Income ETF';
-  if(a.includes('volatility')||a.includes('options strategy')) return 'Volatility / Options';
-  if(a.includes('consumer')) return 'Individual Stock';
+  if(a.startsWith('cef')) return 'CEFs';
+  if(a.startsWith('etf')) return 'ETFs';
+  if(a === 'bdc') return 'BDCs';
+  if(a.includes('preferred stock')) return 'Preferred Stock';
+  if(a.includes('exchange-traded debt')) return 'Exchange-Traded Debt';
   return 'Other';
 }
 const catMap={};
 DATA.forEach(d=>{const c=broadCat(d.ac);catMap[c]=(catMap[c]||0)+1;});
 const catSorted=Object.entries(catMap).sort((a,b)=>b[1]-a[1]);
-const PAL=[GOLD,'#2E7D5A','#1A3F6F','#6B3A2A','#805AD5','#B45309','#C4A882','#4A5568','#2D6A4F','#E76F51'];
+const PAL=[GOLD,'#D9A441','#B98032','#F3D98A','#8F6A2D','#D47B37','#C7AA6A','#9D7840','#E8BD72','#A86E2D'];
 new Chart(document.getElementById('donutChart'),{
   type:'doughnut',
   data:{
@@ -670,31 +669,7 @@ const scatD=DATA.map(d=>({
   ex:d.yield>=50,
   hi:d.yield>=20,
 }));
-new Chart(document.getElementById('scatChart'),{
-  type:'bubble',
-  data:{datasets:[{
-    label:'Tickers',
-    data:scatD,
-    backgroundColor:scatD.map(d=>d.ex?'rgba(139,26,26,.55)':d.hi?'rgba(158,90,10,.55)':'rgba(31,107,71,.48)'),
-    borderColor:scatD.map(d=>d.ex?RED:d.hi?AMBER:GREEN),
-    borderWidth:1.5,
-  }]},
-  options:{
-    responsive:true,maintainAspectRatio:false,
-    plugins:{
-      legend:{display:false},
-      tooltip:{callbacks:{label:c=>{
-        const d=c.raw;
-        const yDisplay=d.ex?`${d.actualY.toFixed(2)}% ⚠`:`${d.actualY.toFixed(2)}%`;
-        return[`${d.label}`,`Yield: ${yDisplay}`,`Mentions: ${d.mentions}`];
-      }}}
-    },
-    scales:{
-      x:{title:{display:true,text:'Mentions',font:{size:12}},min:0,max:8.5,grid:{color:'#EDE4D0'},border:{display:false},ticks:{stepSize:1}},
-      y:{title:{display:true,text:'Yield (%, capped at 75%)',font:{size:12}},beginAtZero:true,grid:{color:'#EDE4D0'},border:{display:false},ticks:{callback:v=>v+'%'}}
-    }
-  }
-});
+
 
 </script>
 
@@ -715,8 +690,11 @@ function download_mainTbl() {
   var ws = XLSX.utils.aoa_to_sheet(rows);
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Report');
-  XLSX.writeFile(wb, 'WeeklyBuySummary.xlsx');
+  XLSX.writeFile(wb, 'WeeklyBuySummary_June15-21_2026.xlsx');
 }
 </script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="premium.js?v=11"></script>
 </body>
 </html>
