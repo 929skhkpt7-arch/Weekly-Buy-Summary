@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armchair Insider — Weekly Buy Summary · June 28–July 5, 2026</title>
+<title>Armchair Insider — Weekly Buy Summary · July 6–12, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -409,7 +409,7 @@ button[onclick^="download_"]{
 <section class="hero">
   <div class="hero-eyebrow">Armchair Insider Lounge</div>
   <h1><em>Weekly Buy</em> Summary</h1>
-  <p class="hero-date">June 28 – July 5, 2026 &nbsp;·&nbsp; Armchair Community Report</p>
+  <p class="hero-date">July 6 – July 12, 2026 &nbsp;·&nbsp; Armchair Community Report</p>
   <p class="hero-desc">A curated snapshot of tickers recently bought or discussed by community members — ranked by mentions, enriched with asset class and yield context, and presented for educational review.</p>
   <span class="hero-disc">⚠ For community discussion and education only. Not financial advice.</span>
 </section>
@@ -423,33 +423,33 @@ button[onclick^="download_"]{
   <div class="metrics">
     <div class="m-card">
       <div class="m-label">Tickers Mentioned</div>
-      <div class="m-val gold">25</div>
+      <div class="m-val gold">41</div>
       <div class="m-meta">Unique tickers across all buys</div>
     </div>
     <div class="m-card">
       <div class="m-label">Total Buy Mentions</div>
-      <div class="m-val gold">35</div>
+      <div class="m-val gold">51</div>
       <div class="m-meta">Aggregated across all members this week</div>
     </div>
     <div class="m-card">
       <div class="m-label">Most Mentioned</div>
-      <div class="m-val" style="font-size:22px;">BTCI</div>
-      <div class="m-meta">4 mentions — bitcoin-income leader</div>
+      <div class="m-val" style="font-size:22px;">KSLV &amp; TYG</div>
+      <div class="m-meta">3 mentions each — highest buy activity</div>
     </div>
     <div class="m-card">
       <div class="m-label">Highest Yield</div>
-      <div class="m-val green">38.84%</div>
-      <div class="m-meta">XBCI — NEOS Boosted Bitcoin High Income ETF</div>
+      <div class="m-val green">28.95%</div>
+      <div class="m-meta">KSLV — Kurv Silver Enhanced Income ETF</div>
     </div>
     <div class="m-card">
       <div class="m-label">Top Asset Class</div>
       <div class="m-val" style="font-size:20px;">ETFs</div>
-      <div class="m-meta">11 tickers and 16 total mentions this week</div>
+      <div class="m-meta">16 tickers and 21 total mentions this week</div>
     </div>
     <div class="m-card">
       <div class="m-label">Average Yield</div>
-      <div class="m-val green">11.86%</div>
-      <div class="m-meta">Across all 25 tickers this week</div>
+      <div class="m-val green">11.59%</div>
+      <div class="m-meta">Across all 41 tickers this week</div>
     </div>
   </div>
 </section>
@@ -490,7 +490,7 @@ button[onclick^="download_"]{
 <div class="wrap">
 <section class="section">
   <p class="sec-eye">◆ Full List</p>
-  <h2 class="sec-title">All 25 Tickers This Week</h2>
+  <h2 class="sec-title">All 41 Tickers This Week</h2>
   <div class="rule"></div>
   <div class="tbl-ctrl">
     <input type="text" class="s-box" id="sBox" placeholder="Search ticker or name…" oninput="filterTbl()">
@@ -502,7 +502,7 @@ button[onclick^="download_"]{
     <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
     <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
     <button onclick="download_mainTbl()" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:#1F6B47;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;white-space:nowrap;" onmouseover="this.style.background='#174f34'" onmouseout="this.style.background='#1F6B47'">⬇ Download Table as Excel</button>
-    <span class="r-count" id="rCount">25 tickers</span>
+    <span class="r-count" id="rCount">41 tickers</span>
   </div>
   <div class="tbl-wrap">
     <table id="mainTbl">
@@ -525,38 +525,54 @@ button[onclick^="download_"]{
 
 <!-- FOOTER -->
 <footer>
-  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; June 28 – July 5, 2026</div>
+  <div><span>Armchair Insider Lounge</span> &nbsp;·&nbsp; Weekly Buy Summary &nbsp;·&nbsp; July 6 – July 12, 2026</div>
   <div>Tickers shown are compatible with Seeking Alpha. Tickers for other websites and brokerages may vary.</div>
   <div>For discussion and educational purposes only. Not investment advice.</div>
 </footer>
 
 <script>
 const DATA = [
-  {rank:1,  ticker:"BTCI",     name:"NEOS Bitcoin High Income ETF",                                            mentions:4, ac:"Bitcoin/options income ETF",                       freq:"Monthly",   yield:26.72},
-  {rank:2,  ticker:"GIS",      name:"General Mills, Inc.",                                                     mentions:2, ac:"Consumer staples equity",                          freq:"Quarterly", yield:6.49},
-  {rank:3,  ticker:"MLPI",     name:"NEOS MLP & Energy Infrastructure High Income ETF",                        mentions:2, ac:"MLP/energy infrastructure income ETF",              freq:"Monthly",   yield:14.76},
-  {rank:4,  ticker:"RITM.PR.C",name:"Rithm Capital Corp. 6.375 PFD SER C",                                     mentions:2, ac:"Mortgage REIT preferred stock",                     freq:"Quarterly", yield:9.29},
-  {rank:5,  ticker:"THQ",      name:"abrdn Healthcare Opportunities Fund",                                     mentions:2, ac:"Healthcare closed-end fund",                        freq:"Monthly",   yield:11.38},
-  {rank:6,  ticker:"TYG",      name:"Tortoise Energy Infrastructure Corporation",                              mentions:2, ac:"Energy infrastructure closed-end fund",             freq:"Monthly",   yield:13.32},
-  {rank:7,  ticker:"UTG",      name:"Reaves Utility Income Fund",                                              mentions:2, ac:"Utility closed-end fund",                           freq:"Monthly",   yield:6.32},
-  {rank:8,  ticker:"KGLD",     name:"Kurv Gold Enhanced Income ETF",                                           mentions:2, ac:"Gold enhanced income ETF",                          freq:"Monthly",   yield:18.54},
-  {rank:9,  ticker:"BME",      name:"BlackRock Health Sciences Trust",                                         mentions:1, ac:"Healthcare closed-end fund",                        freq:"Monthly",   yield:7.21},
-  {rank:10, ticker:"EMO",      name:"ClearBridge Energy Midstream Opportunity Fund Inc",                       mentions:1, ac:"Energy/midstream closed-end fund",                  freq:"Monthly",   yield:8.77},
-  {rank:11, ticker:"EOD",      name:"Allspring Global Dividend Opportunity Fund",                              mentions:1, ac:"Global equity/income closed-end fund",              freq:"Quarterly", yield:8.80},
-  {rank:12, ticker:"GAM.PR.B", name:"General American Investors Company, Inc. 5.95% Cumulative Preferred Series B", mentions:1, ac:"Closed-end fund preferred stock",             freq:"Quarterly", yield:6.00},
-  {rank:13, ticker:"GPIQ",     name:"Goldman Sachs Nasdaq-100 Premium Income ETF",                             mentions:1, ac:"Equity premium income ETF",                         freq:"Monthly",   yield:9.13},
-  {rank:14, ticker:"HTD",      name:"John Hancock Tax-Advantaged Dividend Income Fund",                        mentions:1, ac:"Dividend/preferred closed-end fund",                freq:"Monthly",   yield:7.41},
-  {rank:15, ticker:"IDVO",     name:"Amplify CWP International Enhanced Dividend Income ETF",                  mentions:1, ac:"International covered-call dividend ETF",           freq:"Monthly",   yield:5.94},
-  {rank:16, ticker:"IWMI",     name:"NEOS Russell 2000 High Income ETF",                                       mentions:1, ac:"Small-cap equity income ETF",                       freq:"Monthly",   yield:14.29},
-  {rank:17, ticker:"IYRI",     name:"NEOS Real Estate High Income ETF",                                        mentions:1, ac:"Real estate equity income ETF",                     freq:"Monthly",   yield:10.75},
-  {rank:18, ticker:"NLY.PR.G", name:"Annaly Capital Management, Inc. Series G Preferred",                      mentions:1, ac:"Mortgage REIT preferred stock",                     freq:"Quarterly", yield:8.26},
-  {rank:19, ticker:"NPCT",     name:"Nuveen Core Plus Impact Fund",                                            mentions:1, ac:"Multi-sector bond closed-end fund",                 freq:"Monthly",   yield:10.67},
-  {rank:20, ticker:"OVL",      name:"Overlay Shares Large Cap Equity ETF",                                     mentions:1, ac:"Large-cap equity overlay ETF",                      freq:"Monthly",   yield:7.17},
-  {rank:21, ticker:"PTY",      name:"PIMCO Corporate & Income Opportunity Fund",                               mentions:1, ac:"Multi-sector credit closed-end fund",               freq:"Monthly",   yield:11.80},
-  {rank:22, ticker:"QQQI",     name:"NEOS Nasdaq-100 High Income ETF",                                         mentions:1, ac:"Nasdaq equity income ETF",                          freq:"Monthly",   yield:14.11},
-  {rank:23, ticker:"RFI",      name:"Cohen & Steers Total Return Realty Fund",                                 mentions:1, ac:"Real estate closed-end fund",                       freq:"Monthly",   yield:8.36},
-  {rank:24, ticker:"SPYI",     name:"NEOS S&P 500 High Income ETF",                                            mentions:1, ac:"S&P 500 equity income ETF",                         freq:"Monthly",   yield:12.08},
-  {rank:25, ticker:"XBCI",     name:"NEOS Boosted Bitcoin High Income ETF",                                    mentions:1, ac:"Bitcoin/options income ETF",                        freq:"Monthly",   yield:38.84},
+  {rank:1,  ticker:"KSLV", name:"Kurv Silver Enhanced Income ETF", mentions:3, ac:"Commodity/option-income ETF", freq:"Monthly", yield:28.95},
+  {rank:2,  ticker:"TYG", name:"Tortoise Energy Infrastructure Corp", mentions:3, ac:"Energy infrastructure CEF", freq:"Monthly", yield:13.14},
+  {rank:3,  ticker:"BDJ", name:"BlackRock Enhanced Equity Dividend Trust", mentions:2, ac:"Equity covered-call CEF", freq:"Monthly", yield:7.68},
+  {rank:4,  ticker:"CSWC", name:"Capital Southwest", mentions:2, ac:"BDC", freq:"Monthly (regular) + Quarterly supplemental", yield:10.74},
+  {rank:5,  ticker:"HTGC", name:"Hercules Capital, Inc.", mentions:2, ac:"BDC", freq:"Quarterly", yield:11.74},
+  {rank:6,  ticker:"IAUI", name:"NEOS Gold High Income ETF", mentions:2, ac:"Gold/option-income ETF", freq:"Monthly", yield:11.79},
+  {rank:7,  ticker:"MLPI", name:"NEOS MLP & Energy Infrastructure High Income ETF", mentions:2, ac:"MLP/energy infrastructure income ETF", freq:"Monthly", yield:14.48},
+  {rank:8,  ticker:"OVF", name:"Overlay Shares Foreign Equity ETF", mentions:2, ac:"International equity/option-overlay ETF", freq:"Quarterly", yield:10.51},
+  {rank:9,  ticker:"ARCC", name:"Ares Capital", mentions:1, ac:"BDC", freq:"Quarterly", yield:10.22},
+  {rank:10,  ticker:"BTCI", name:"NEOS Bitcoin High Income ETF", mentions:1, ac:"Bitcoin/option-income ETF", freq:"Monthly", yield:26.16},
+  {rank:11,  ticker:"FDUS", name:"Fidus Investment", mentions:1, ac:"BDC", freq:"Quarterly (base + supplemental)", yield:10.94},
+  {rank:12,  ticker:"GGT", name:"Gabelli Multimedia Trust Inc", mentions:1, ac:"Equity CEF", freq:"Monthly", yield:19.81},
+  {rank:13,  ticker:"GPIQ", name:"Goldman Sachs Nasdaq-100 Premium Income ETF", mentions:1, ac:"Nasdaq-100 option-income ETF", freq:"Monthly", yield:9.33},
+  {rank:14,  ticker:"HPI", name:"John Hancock Preferred Income Fund", mentions:1, ac:"Preferred securities CEF", freq:"Monthly", yield:9.06},
+  {rank:15,  ticker:"HQL", name:"abrdn Life Sciences Investors", mentions:1, ac:"Healthcare/life sciences CEF", freq:"Quarterly", yield:11.05},
+  {rank:16,  ticker:"HQH", name:"abrdn Healthcare Investors", mentions:1, ac:"Healthcare CEF", freq:"Quarterly", yield:11.30},
+  {rank:17,  ticker:"HTD", name:"John Hancock Tax-Advantaged Dividend Income Fund", mentions:1, ac:"Tax-advantaged dividend CEF", freq:"Monthly", yield:7.33},
+  {rank:18,  ticker:"ICAP", name:"Infrastructure Capital Equity Income ETF", mentions:1, ac:"Equity income ETF", freq:"Monthly", yield:9.74},
+  {rank:19,  ticker:"IDVO", name:"Amplify CWP International Enhanced Div Inc ETF", mentions:1, ac:"International dividend ETF", freq:"Monthly", yield:5.61},
+  {rank:20,  ticker:"IYRI", name:"NEOS Real Estate High Income ETF", mentions:1, ac:"REIT preferred ETF", freq:"Monthly", yield:10.93},
+  {rank:21,  ticker:"JPC", name:"Nuveen Preferred & Income Opportunities Fund", mentions:1, ac:"Preferred/income CEF", freq:"Monthly", yield:9.51},
+  {rank:22,  ticker:"JRS", name:"Nuveen Real Estate Income Fund", mentions:1, ac:"Real estate CEF", freq:"Quarterly", yield:8.90},
+  {rank:23,  ticker:"KCOP", name:"Kurv Copper & Mining Enhanced Income ETF", mentions:1, ac:"Hard-asset/income security; full name not verified from source page", freq:"Monthly", yield:16.31},
+  {rank:24,  ticker:"KGLD", name:"Kurv Gold Enhanced Income ETF", mentions:1, ac:"Gold/option-income ETF", freq:"Monthly", yield:18.54},
+  {rank:25,  ticker:"KQQQ", name:"Kurv Technology Titans Select ETF", mentions:1, ac:"Technology option-income ETF", freq:"Monthly", yield:14.02},
+  {rank:26,  ticker:"KYLD", name:"Kurv High Income ETF", mentions:1, ac:"Option-income ETF", freq:"Weekly", yield:23.70},
+  {rank:27,  ticker:"MAIN", name:"Main Street Capital Corporation", mentions:1, ac:"BDC", freq:"Monthly", yield:8.29},
+  {rank:28,  ticker:"NLY.PR.G", name:"Annaly Capital Management, Inc. PFD SER G", mentions:1, ac:"Preferred stock", freq:"Quarterly", yield:8.28},
+  {rank:29,  ticker:"NXG", name:"NXG NextGen Infrastructure Income Fund", mentions:1, ac:"Infrastructure/energy CEF", freq:"Monthly", yield:11.43},
+  {rank:30,  ticker:"OVL", name:"Overlay Shares Large Cap Equity ETF", mentions:1, ac:"U.S. large-cap option-overlay ETF", freq:"Monthly", yield:7.06},
+  {rank:31,  ticker:"OVS", name:"Overlay Shares Small Cap Equity ETF", mentions:1, ac:"U.S. small-cap option-overlay ETF", freq:"Monthly", yield:7.38},
+  {rank:32,  ticker:"PFE", name:"Pfizer Inc.", mentions:1, ac:"Healthcare equity", freq:"Quarterly", yield:7.12},
+  {rank:33,  ticker:"PFFA", name:"Virtus InfraCap US Preferred Stock ETF", mentions:1, ac:"Preferred-stock ETF", freq:"Monthly", yield:9.81},
+  {rank:34,  ticker:"SFL", name:"SFL Corporation Ltd.", mentions:1, ac:"Shipping/leasing equity", freq:"Quarterly", yield:7.92},
+  {rank:35,  ticker:"SPYI", name:"NEOS S&P 500 High Income ETF", mentions:1, ac:"S&P 500 option-income ETF", freq:"Monthly", yield:11.99},
+  {rank:36,  ticker:"STWD", name:"Starwood Property Trust, Inc.", mentions:1, ac:"Mortgage REIT", freq:"Quarterly", yield:11.54},
+  {rank:37,  ticker:"TRIN", name:"Trinity Capital Inc.", mentions:1, ac:"BDC", freq:"Monthly", yield:11.59},
+  {rank:38,  ticker:"TUGN", name:"STF Tactical Growth & Income ETF", mentions:1, ac:"Income ETF/security; full name not verified from source page", freq:"Monthly", yield:10.86},
+  {rank:39,  ticker:"UTF", name:"Cohen & Steers Infrastructure Fund Inc", mentions:1, ac:"Infrastructure CEF", freq:"Monthly", yield:7.15},
+  {rank:40,  ticker:"UTG", name:"Reaves Utility Income Fund", mentions:1, ac:"Utility/infrastructure CEF", freq:"Monthly", yield:6.17},
+  {rank:41,  ticker:"VICI", name:"VICI Properties Inc.", mentions:1, ac:"REIT", freq:"Quarterly", yield:6.92},
 ];
 
 // ─── TABLE ───
@@ -571,10 +587,11 @@ function yTag(y){
 
 function broadCat(ac){
   const a=ac.toLowerCase();
-  if(a.includes('preferred stock')) return 'Preferred Stock';
-  if(a.includes('closed-end fund')) return 'CEFs';
-  if(a.includes('etf')) return 'ETFs';
   if(a.includes('bdc')) return 'BDCs';
+  if(a.includes('cef') || a.includes('closed-end fund')) return 'CEFs';
+  if(a.includes('preferred stock') || a.includes('preferred-stock') || a === 'preferred stock') return 'Preferred Stock';
+  if(a.includes('reit') && !a.includes('etf')) return 'REITs';
+  if(a.includes('etf')) return 'ETFs';
   if(a.includes('equity')) return 'Equities';
   if(a.includes('bond') || a.includes('credit')) return 'Credit / Bonds';
   return 'Other';
@@ -737,7 +754,7 @@ function download_mainTbl() {
   var ws = XLSX.utils.aoa_to_sheet(rows);
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Report');
-  XLSX.writeFile(wb, 'WeeklyBuySummary_June28-July5_2026.xlsx');
+  XLSX.writeFile(wb, 'WeeklyBuySummary_July6-July12_2026.xlsx');
 }
 </script>
 <script src="vendor/gsap.min.js"></script>
