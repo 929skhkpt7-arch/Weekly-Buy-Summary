@@ -203,6 +203,30 @@ td{padding:11px 13px;vertical-align:middle;}
   display:inline-block;background:#FFF6DB;border:1px solid var(--gold-border);
   font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;color:#7A5722;white-space:nowrap;
 }
+.pdf-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  text-decoration:none;
+  padding:9px 16px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
+  color:var(--ink);
+  border:0;
+  border-radius:7px;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  letter-spacing:.02em;
+  transition:transform .15s,box-shadow .15s,filter .15s;
+  white-space:nowrap;
+  box-shadow:0 10px 22px rgba(201,168,76,.22);
+}
+.pdf-btn:hover{
+  transform:translateY(-1px);
+  filter:saturate(1.05);
+  box-shadow:0 14px 30px rgba(201,168,76,.30);
+}
 .men-wrap{display:flex;align-items:center;gap:7px;}
 .men-num{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;min-width:16px;}
 .men-bar{height:6px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:3px;min-width:4px;}
@@ -351,6 +375,22 @@ button[onclick^="download_"]{
   .section{padding-top:34px!important;padding-bottom:34px!important}
   .hero{padding:38px 18px!important}
   .m-card,.c-card,.ana-block,.insight-card,.top-card{padding:18px!important}
+}
+@media print{
+  .tbl-ctrl,
+  .hero-disc,
+  button,
+  .pdf-btn{
+    display:none!important;
+  }
+  body{
+    background:#fff!important;
+  }
+  .hero,
+  footer{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -567,13 +607,13 @@ button[onclick^="download_"]{
   </div>
   <div class="metric-card m-card reveal">
     <span class="m-label">Total Buy Mentions</span>
-    <strong>68</strong>
+    <strong>67</strong>
     <span class="m-meta">Aggregated across all members this week</span>
   </div>
   <div class="metric-card m-card reveal">
     <span class="m-label">Most Mentioned</span>
     <strong>CAIE</strong>
-    <span class="m-meta">6 mentions · Calamos Autocallable Income ETF</span>
+    <span class="m-meta">5 mentions · Calamos Autocallable Income ETF</span>
   </div>
   <div class="metric-card m-card reveal">
     <span class="m-label">Highest Yield</span>
@@ -583,7 +623,7 @@ button[onclick^="download_"]{
   <div class="metric-card m-card reveal">
     <span class="m-label">Top Asset Class</span>
     <strong>ETFs</strong>
-    <span class="m-meta">26 tickers and 41 total mentions</span>
+    <span class="m-meta">26 tickers and 40 total mentions</span>
   </div>
   <div class="metric-card m-card reveal">
     <span class="m-label">Average Yield</span>
@@ -642,6 +682,7 @@ button[onclick^="download_"]{
     <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
     <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
     <button onclick="download_mainTbl()" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:#1F6B47;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;white-space:nowrap;" onmouseover="this.style.background='#174f34'" onmouseout="this.style.background='#1F6B47'">⬇ Download Table as Excel</button>
+    <a class="pdf-btn" href="../../Armchair-Insider-Weekly-Buy-Summary-July-20-26-2026.pdf" download>⬇ Download PDF</a>
     <span class="r-count" id="rCount">47 tickers</span>
   </div>
   <div class="tbl-wrap">
@@ -676,7 +717,7 @@ const DATA = [
     rank: 1,
     ticker: "CAIE",
     name: "Calamos Autocallable Income ETF",
-    mentions: 6,
+    mentions: 5,
     assetClass: "Autocallable income ETF",
     yield: 14.69,
     paymentFrequency: "Monthly"
@@ -1283,6 +1324,7 @@ function download_mainTbl() {
   XLSX.utils.book_append_sheet(wb, ws, 'Report');
   XLSX.writeFile(wb, 'WeeklyBuySummary_July20-July26_2026.xlsx');
 }
+
 </script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
