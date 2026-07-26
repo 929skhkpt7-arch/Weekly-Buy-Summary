@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -682,7 +684,7 @@ button[onclick^="download_"]{
     <button class="f-btn"        data-f="hi2"   onclick="setF('hi2')">2+ Mentions</button>
     <button class="f-btn"        data-f="hy20"  onclick="setF('hy20')">Yield &gt;20%</button>
     <button onclick="download_mainTbl()" style="display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:#1F6B47;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;white-space:nowrap;" onmouseover="this.style.background='#174f34'" onmouseout="this.style.background='#1F6B47'">⬇ Download Table as Excel</button>
-    <a class="pdf-btn" href="Armchair-Insider-Weekly-Buy-Summary-July-20-26-2026.pdf" target="_blank" rel="noopener">View PDF</a>
+    <a class="pdf-btn" href="../../Armchair-Insider-Weekly-Buy-Summary-July-20-26-2026.pdf" target="_blank" rel="noopener">View PDF</a>
     <span class="r-count" id="rCount">47 tickers</span>
   </div>
   <div class="tbl-wrap">
@@ -1192,7 +1194,7 @@ function getRows(){
   if(curFilter==='CEF')  r=r.filter(d=>broadCat(d.ac)==='CEFs');
   else if(curFilter==='ETF')  r=r.filter(d=>broadCat(d.ac)==='ETFs');
   else if(curFilter==='PREF') r=r.filter(d=>broadCat(d.ac)==='Preferred Stock');
-  else if(curFilter==='EQ')   r=r.filter(d=>broadCat(d.ac)==='Equities');
+  else if(curFilter==='EQ')   r=r.filter(d=>(d.ac + ' ' + d.name).toLowerCase().includes('equity'));
   else if(curFilter==='hi2')  r=r.filter(d=>d.mentions>=2);
   else if(curFilter==='hy20') r=r.filter(d=>d.yield>=20);
   return r;
