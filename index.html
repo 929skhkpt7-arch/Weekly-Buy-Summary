@@ -766,7 +766,7 @@ function broadCat(ac){
   const a=ac.toLowerCase();
   if(a.includes('bdc')) return 'BDCs';
   if(a.includes('cef') || a.includes('closed-end fund')) return 'CEFs';
-  if(a.includes('preferred stock') || a.includes('preferred-stock') || a === 'preferred stock') return 'Preferred Stock';
+  if(a.includes('preferred')) return 'Preferred Stock';
   if(a.includes('reit') && !a.includes('etf')) return 'REITs';
   if(a.includes('etf')) return 'ETFs';
   if(a.includes('equity')) return 'Equities';
