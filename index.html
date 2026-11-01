@@ -772,6 +772,29 @@ button[onclick^="download_"]{
   }
   @media (max-width: 700px) {
     .wrap { padding-left: 10px; padding-right: 10px; }
+    .tbl-wrap {
+      display: block !important;
+      width: 100% !important;
+      overflow-x: hidden !important;
+      overflow-y: visible !important;
+    }
+    #mainTbl {
+      display: table !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      table-layout: fixed !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      font-size: 8px !important;
+    }
+    #mainTbl thead { display: table-header-group !important; }
+    #mainTbl tbody { display: table-row-group !important; }
+    #mainTbl tr { display: table-row !important; }
+    #mainTbl th, #mainTbl td {
+      display: table-cell !important;
+      padding: 7px 3px !important;
+      font-size: 8px !important;
+    }
     .tbl-ctrl { gap: 6px; padding: 8px !important; }
     .tbl-ctrl .s-box { min-width: 120px; padding: 7px 9px; font-size: 11px; }
     .tbl-ctrl .f-btn,
@@ -780,11 +803,9 @@ button[onclick^="download_"]{
     .weekly-title-row { align-items: flex-start; }
     .weekly-covered { padding: 6px 8px; }
     .weekly-covered strong { font-size: 10px; }
-    #mainTbl { font-size: 8px; }
-    #mainTbl th, #mainTbl td { padding: 7px 3px; }
-    #mainTbl th:nth-child(4), #mainTbl td:nth-child(4) { padding-left: 6px; }
-    #mainTbl th:nth-child(5), #mainTbl td:nth-child(5) { padding-left: 7px; }
-    #mainTbl th { font-size: 7px; letter-spacing: .02em; }
+    #mainTbl th:nth-child(4), #mainTbl td:nth-child(4) { padding-left: 6px !important; }
+    #mainTbl th:nth-child(5), #mainTbl td:nth-child(5) { padding-left: 7px !important; }
+    #mainTbl th { font-size: 7px !important; letter-spacing: .02em !important; }
     #mainTbl th:nth-child(1) { width: 4%; }
     #mainTbl th:nth-child(2) { width: 15%; }
     #mainTbl th:nth-child(3) { width: 21%; }
@@ -792,9 +813,17 @@ button[onclick^="download_"]{
     #mainTbl th:nth-child(5) { width: 24%; }
     #mainTbl th:nth-child(6) { width: 13%; }
     #mainTbl th:nth-child(7) { width: 16%; }
-    #mainTbl .t-badge, #mainTbl .type-pill, #mainTbl .freq-pill { font-size: 7px; padding: 2px 3px; }
-    #mainTbl .t-badge { font-size: 6.5px; padding: 2px; }
-    #mainTbl .yield-v, #mainTbl .men-num { font-size: 8px; }
+    #mainTbl .t-badge, #mainTbl .type-pill, #mainTbl .freq-pill { font-size: 7px !important; padding: 2px 3px !important; }
+    #mainTbl .t-badge { font-size: 6.5px !important; padding: 2px !important; }
+    #mainTbl .yield-v, #mainTbl .men-num { font-size: 8px !important; }
+    #mainTbl .tag { display: none !important; }
+    #mainTbl td:nth-child(7), #mainTbl .freq-pill {
+      white-space: normal !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      text-align: center;
+    }
+    #mainTbl .freq-pill { display: inline-block; max-width: 100%; }
     #mainTbl .men-bar { display: none; }
   }
 </style>
