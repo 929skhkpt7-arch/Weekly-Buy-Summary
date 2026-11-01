@@ -626,6 +626,178 @@ button[onclick^="download_"]{
 @media(max-width:1120px){.quarter-context .q-two.q-three{grid-template-columns:1fr 1fr!important}.quarter-context .q-note{grid-column:1/-1!important}}
 @media(max-width:760px){.quarter-context .q-two.q-three{grid-template-columns:1fr!important}.quarter-context .q-note{grid-column:auto!important}}
 </style>
+<style id="responsive-table-layout">
+  /* This copy keeps every table column in the viewport by wrapping long content. */
+  .tbl-wrap { overflow-x: hidden !important; }
+  #mainTbl {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed;
+    font-size: clamp(9px, 0.95vw, 13px);
+  }
+  #mainTbl th,
+  #mainTbl td {
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  #mainTbl th { padding: 10px 8px; line-height: 1.22; }
+  #mainTbl td { padding: 10px 8px; line-height: 1.35; }
+  #mainTbl th:nth-child(4),
+  #mainTbl td:nth-child(4) { padding-left: 12px; }
+  #mainTbl th:nth-child(5),
+  #mainTbl td:nth-child(5) { padding-left: 14px; }
+  #mainTbl th:nth-child(1) { width: 3%; }
+  #mainTbl th:nth-child(2) { width: 11%; }
+  #mainTbl th:nth-child(3) { width: 23%; }
+  #mainTbl th:nth-child(4) { width: 7%; }
+  #mainTbl th:nth-child(5) { width: 31%; }
+  #mainTbl th:nth-child(6) { width: 12%; }
+  #mainTbl th:nth-child(7) { width: 13%; }
+  #mainTbl .name-c {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  #mainTbl .type-pill,
+  #mainTbl .freq-pill,
+  #mainTbl .yield-link { white-space: normal; }
+  #mainTbl th:nth-child(1),
+  #mainTbl th:nth-child(2),
+  #mainTbl th:nth-child(4),
+  #mainTbl th:nth-child(6),
+  #mainTbl td:nth-child(1),
+  #mainTbl td:nth-child(2),
+  #mainTbl td:nth-child(4),
+  #mainTbl td:nth-child(6),
+  #mainTbl td:nth-child(7) { white-space: nowrap !important; }
+  #mainTbl td:nth-child(2) { overflow: hidden; }
+  #mainTbl .t-badge {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  .tbl-ctrl {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  .tbl-ctrl > * { flex: 0 0 auto; }
+  .tbl-ctrl .s-box { flex: 1 1 180px; min-width: 150px; }
+  .tbl-ctrl .r-count { margin-left: 0; }
+  .tbl-ctrl .pdf-btn {
+    background: #1F5E7A;
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(31,94,122,.22);
+  }
+  .tbl-ctrl .pdf-btn:hover {
+    background: #17475D;
+    box-shadow: 0 14px 30px rgba(31,94,122,.30);
+  }
+  .quarter-context .q-note {
+    align-self: start;
+    min-height: 0;
+    padding: 14px 16px;
+  }
+  .quarter-context .q-two.q-three {
+    grid-template-columns: minmax(230px, .82fr) minmax(0, 1.48fr) !important;
+    align-items: stretch;
+  }
+  .quarter-context .q-two.q-three > .q-note {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .quarter-context .q-two.q-three > .q-chart:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quarter-context .q-two.q-three > .q-chart:nth-child(2) .q-canvas {
+    height: 420px;
+    flex: 1 1 auto;
+  }
+  .quarter-context .q-two.q-three > .q-chart:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .weekly-title-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .weekly-title-row .sec-eye { margin-bottom: 6px; }
+  .weekly-title-row .sec-title { margin-bottom: 0; }
+  .weekly-covered {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    background: var(--gold-pale);
+    text-align: right;
+  }
+  .weekly-covered span {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+  }
+  .weekly-covered strong {
+    display: block;
+    margin-top: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink);
+  }
+  @media (max-width: 900px) {
+    .quarter-context .q-two.q-three { grid-template-columns: 1fr !important; }
+    .quarter-context .q-two.q-three > .q-note,
+    .quarter-context .q-two.q-three > .q-chart:nth-child(2),
+    .quarter-context .q-two.q-three > .q-chart:nth-child(3) {
+      grid-column: auto;
+      grid-row: auto;
+      min-height: 0;
+    }
+    .quarter-context .q-two.q-three > .q-chart:nth-child(2) .q-canvas { height: 220px; }
+  }
+  @media (max-width: 700px) {
+    .wrap { padding-left: 10px; padding-right: 10px; }
+    .tbl-ctrl { gap: 6px; padding: 8px !important; }
+    .tbl-ctrl .s-box { min-width: 120px; padding: 7px 9px; font-size: 11px; }
+    .tbl-ctrl .f-btn,
+    .tbl-ctrl .pdf-btn,
+    .tbl-ctrl button[onclick^="download_"] { padding: 7px 9px !important; font-size: 10px !important; }
+    .weekly-title-row { align-items: flex-start; }
+    .weekly-covered { padding: 6px 8px; }
+    .weekly-covered strong { font-size: 10px; }
+    #mainTbl { font-size: 8px; }
+    #mainTbl th, #mainTbl td { padding: 7px 3px; }
+    #mainTbl th:nth-child(4), #mainTbl td:nth-child(4) { padding-left: 6px; }
+    #mainTbl th:nth-child(5), #mainTbl td:nth-child(5) { padding-left: 7px; }
+    #mainTbl th { font-size: 7px; letter-spacing: .02em; }
+    #mainTbl th:nth-child(1) { width: 4%; }
+    #mainTbl th:nth-child(2) { width: 15%; }
+    #mainTbl th:nth-child(3) { width: 21%; }
+    #mainTbl th:nth-child(4) { width: 7%; }
+    #mainTbl th:nth-child(5) { width: 24%; }
+    #mainTbl th:nth-child(6) { width: 13%; }
+    #mainTbl th:nth-child(7) { width: 16%; }
+    #mainTbl .t-badge, #mainTbl .type-pill, #mainTbl .freq-pill { font-size: 7px; padding: 2px 3px; }
+    #mainTbl .t-badge { font-size: 6.5px; padding: 2px; }
+    #mainTbl .yield-v, #mainTbl .men-num { font-size: 8px; }
+    #mainTbl .men-bar { display: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -663,8 +835,13 @@ button[onclick^="download_"]{
 <div class="weekly-metrics-band">
 <div class="wrap">
 <section class="section weekly-metrics-section">
-  <p class="sec-eye">At a Glance</p>
-  <h2 class="sec-title">Weekly Metrics</h2>
+  <div class="weekly-title-row">
+    <div>
+      <p class="sec-eye">At a Glance</p>
+      <h2 class="sec-title">Weekly Metrics</h2>
+    </div>
+    <div class="weekly-covered"><span>Week Covered</span><strong>Oct 26–Nov 1, 2026</strong></div>
+  </div>
   <div class="rule"></div>
   <div class="metrics">
   <div class="metric-card m-card reveal">
