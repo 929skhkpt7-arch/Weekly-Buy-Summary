@@ -853,7 +853,7 @@ button[onclick^="download_"]{
     <div class="q-two q-three">
       <div class="q-note"><strong>Standout trend:</strong> September–November recorded 775 buy mentions across 11 reporting windows. PFFA led recurring community buying with 40 mentions, while option-income ETFs, closed-end funds, utilities, and BDCs remained consistently represented throughout the period.</div>
       <div class="q-chart"><div class="q-chart-title">September–November Weekly Buy Trend</div><div class="q-canvas"><canvas id="quarterBuyTrend"></canvas></div><div class="q-bars q-line-fallback"></div></div>
-      <div class="q-chart"><div class="q-chart-title">August–November Asset-Class Mix</div><div class="q-canvas"><canvas id="quarterBuyMix"></canvas></div><div class="q-bars"><div class="q-bar-row"><span>ETF</span><span class="q-track"><span class="q-fill" style="width:100%"></span></span><span>464</span></div><div class="q-bar-row"><span>CEF</span><span class="q-track"><span class="q-fill" style="width:61%"></span></span><span>283</span></div><div class="q-bar-row"><span>BDC</span><span class="q-track"><span class="q-fill" style="width:14%"></span></span><span>64</span></div><div class="q-bar-row"><span>Preferred</span><span class="q-track"><span class="q-fill" style="width:11%"></span></span><span>53</span></div><div class="q-bar-row"><span>Credit / Bonds</span><span class="q-track"><span class="q-fill" style="width:10%"></span></span><span>46</span></div><div class="q-bar-row"><span>REIT</span><span class="q-track"><span class="q-fill" style="width:6%"></span></span><span>27</span></div></div></div>
+      <div class="q-chart"><div class="q-chart-title">September–November Asset-Class Mix</div><div class="q-canvas"><canvas id="quarterBuyMix"></canvas></div><div class="q-bars"></div></div>
     </div>
   </div>
 </section>
@@ -1850,10 +1850,10 @@ function download_mainTbl() {
   const goldLt = '#E8C97A';
   const trendData = [{"label":"Sep 7–13","value":65},{"label":"Sep 14–20","value":58},{"label":"Sep 21–27","value":48},{"label":"Sep 28–Oct 4","value":79},{"label":"Oct 5–11","value":63},{"label":"Oct 12–18","value":66},{"label":"Oct 19–25","value":83},{"label":"Oct 26–Nov 1","value":121},{"label":"Nov 2–8","value":82},{"label":"Nov 9–15","value":41},{"label":"Nov 16–22","value":69}];
   // September 7-November 22 rollup; values are buy mentions across all 11 reporting windows.
-  const mixData = [{"label":"ETF","value":495},{"label":"CEF","value":310},{"label":"BDC","value":70},{"label":"Preferred","value":56},{"label":"Credit / Bonds","value":46},{"label":"REIT","value":29},{"label":"Equity","value":9},{"label":"MLP / Energy","value":5},{"label":"Other","value":13}];
+  const mixData = [{"label":"ETF","value":400},{"label":"CEF","value":207},{"label":"BDC","value":47},{"label":"Preferred","value":47},{"label":"Credit / Bonds","value":30},{"label":"REIT","value":20},{"label":"Equity","value":9},{"label":"MLP / Energy","value":4},{"label":"Other","value":11}];
   const contextTitles = document.querySelectorAll('.quarter-context .q-chart-title');
   if (contextTitles[0]) contextTitles[0].textContent = 'September–November Weekly Buy Trend';
-  if (contextTitles[1]) contextTitles[1].textContent = 'Full-Reporting-Period Asset-Class Mix';
+  if (contextTitles[1]) contextTitles[1].textContent = 'September–November Asset-Class Mix';
   const [trendFallback, mixFallback] = document.querySelectorAll('.quarter-context .q-bars');
   const fallbackRows = (items) => {
     const max = Math.max(...items.map(item => item.value));
